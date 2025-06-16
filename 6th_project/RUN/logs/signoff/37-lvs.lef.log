@@ -1,0 +1,179 @@
+Netgen 1.5.270 compiled on Sun Jun  2 19:00:27 UTC 2024
+Warning: netgen command 'format' use fully-qualified name '::netgen::format'
+Warning: netgen command 'global' use fully-qualified name '::netgen::global'
+Generating JSON file result
+Reading netlist file /openlane/designs/6th_project/runs/RUN_2025.06.16_13.48.20/results/signoff/cpu_top.spice
+Reading netlist file /openlane/designs/6th_project/runs/RUN_2025.06.16_13.48.20/tmp/signoff/34-cpu_top.pnl.v
+Warning:  A case-insensitive file has been read and so the	verilog file must be treated case-insensitive to match.
+Creating placeholder cell definition for module sky130_fd_sc_hd__decap_3.
+Creating placeholder cell definition for module sky130_ef_sc_hd__decap_12.
+Creating placeholder cell definition for module sky130_fd_sc_hd__decap_4.
+Creating placeholder cell definition for module sky130_fd_sc_hd__fill_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__decap_6.
+Creating placeholder cell definition for module sky130_fd_sc_hd__decap_8.
+Creating placeholder cell definition for module sky130_fd_sc_hd__fill_2.
+Creating placeholder cell definition for module sky130_fd_sc_hd__tapvpwrvgnd_1.
+Creating placeholder cell definition for module sky130_fd_sc_hd__conb_1.
+Note:  Implicit pin LO in instance cpu_top_13 of sky130_fd_sc_hd__conb_1 in cell cpu_top
+Note:  Implicit pin HI in instance cpu_top_1 of sky130_fd_sc_hd__conb_1 in cell cpu_top
+Note:  Implicit pin HI in instance cpu_top_10 of sky130_fd_sc_hd__conb_1 in cell cpu_top
+Note:  Implicit pin HI in instance cpu_top_11 of sky130_fd_sc_hd__conb_1 in cell cpu_top
+Note:  Implicit pin HI in instance cpu_top_12 of sky130_fd_sc_hd__conb_1 in cell cpu_top
+Note:  Implicit pin LO in instance cpu_top_14 of sky130_fd_sc_hd__conb_1 in cell cpu_top
+Note:  Implicit pin HI in instance cpu_top_2 of sky130_fd_sc_hd__conb_1 in cell cpu_top
+Note:  Implicit pin HI in instance cpu_top_3 of sky130_fd_sc_hd__conb_1 in cell cpu_top
+Note:  Implicit pin HI in instance cpu_top_4 of sky130_fd_sc_hd__conb_1 in cell cpu_top
+Note:  Implicit pin HI in instance cpu_top_5 of sky130_fd_sc_hd__conb_1 in cell cpu_top
+Note:  Implicit pin HI in instance cpu_top_6 of sky130_fd_sc_hd__conb_1 in cell cpu_top
+Note:  Implicit pin HI in instance cpu_top_7 of sky130_fd_sc_hd__conb_1 in cell cpu_top
+Note:  Implicit pin HI in instance cpu_top_8 of sky130_fd_sc_hd__conb_1 in cell cpu_top
+Note:  Implicit pin HI in instance cpu_top_9 of sky130_fd_sc_hd__conb_1 in cell cpu_top
+
+Reading setup file /root/.volare/sky130A/libs.tech/netgen/sky130A_setup.tcl
+
+Comparison output logged to file /openlane/designs/6th_project/runs/RUN_2025.06.16_13.48.20/logs/signoff/37-cpu_top.lef.lvs.log
+Logging to file "/openlane/designs/6th_project/runs/RUN_2025.06.16_13.48.20/logs/signoff/37-cpu_top.lef.lvs.log" enabled
+
+Contents of circuit 1:  Circuit: 'sky130_ef_sc_hd__decap_12'
+Circuit sky130_ef_sc_hd__decap_12 contains 0 device instances.
+Circuit contains 0 nets, and 4 disconnected pins.
+Contents of circuit 2:  Circuit: 'sky130_ef_sc_hd__decap_12'
+Circuit sky130_ef_sc_hd__decap_12 contains 0 device instances.
+Circuit contains 0 nets.
+
+Circuit sky130_ef_sc_hd__decap_12 contains no devices.
+
+Contents of circuit 1:  Circuit: 'sky130_fd_sc_hd__decap_6'
+Circuit sky130_fd_sc_hd__decap_6 contains 0 device instances.
+Circuit contains 0 nets, and 4 disconnected pins.
+Contents of circuit 2:  Circuit: 'sky130_fd_sc_hd__decap_6'
+Circuit sky130_fd_sc_hd__decap_6 contains 0 device instances.
+Circuit contains 0 nets.
+
+Circuit sky130_fd_sc_hd__decap_6 contains no devices.
+
+Contents of circuit 1:  Circuit: 'sky130_fd_sc_hd__tapvpwrvgnd_1'
+Circuit sky130_fd_sc_hd__tapvpwrvgnd_1 contains 0 device instances.
+Circuit contains 0 nets, and 2 disconnected pins.
+Contents of circuit 2:  Circuit: 'sky130_fd_sc_hd__tapvpwrvgnd_1'
+Circuit sky130_fd_sc_hd__tapvpwrvgnd_1 contains 0 device instances.
+Circuit contains 0 nets.
+
+Circuit sky130_fd_sc_hd__tapvpwrvgnd_1 contains no devices.
+
+Contents of circuit 1:  Circuit: 'sky130_fd_sc_hd__fill_1'
+Circuit sky130_fd_sc_hd__fill_1 contains 0 device instances.
+Circuit contains 0 nets, and 4 disconnected pins.
+Contents of circuit 2:  Circuit: 'sky130_fd_sc_hd__fill_1'
+Circuit sky130_fd_sc_hd__fill_1 contains 0 device instances.
+Circuit contains 0 nets.
+
+Circuit sky130_fd_sc_hd__fill_1 contains no devices.
+
+Contents of circuit 1:  Circuit: 'sky130_fd_sc_hd__decap_3'
+Circuit sky130_fd_sc_hd__decap_3 contains 0 device instances.
+Circuit contains 0 nets, and 4 disconnected pins.
+Contents of circuit 2:  Circuit: 'sky130_fd_sc_hd__decap_3'
+Circuit sky130_fd_sc_hd__decap_3 contains 0 device instances.
+Circuit contains 0 nets.
+
+Circuit sky130_fd_sc_hd__decap_3 contains no devices.
+
+Contents of circuit 1:  Circuit: 'sky130_fd_sc_hd__decap_4'
+Circuit sky130_fd_sc_hd__decap_4 contains 0 device instances.
+Circuit contains 0 nets, and 4 disconnected pins.
+Contents of circuit 2:  Circuit: 'sky130_fd_sc_hd__decap_4'
+Circuit sky130_fd_sc_hd__decap_4 contains 0 device instances.
+Circuit contains 0 nets.
+
+Circuit sky130_fd_sc_hd__decap_4 contains no devices.
+
+Contents of circuit 1:  Circuit: 'sky130_fd_sc_hd__decap_8'
+Circuit sky130_fd_sc_hd__decap_8 contains 0 device instances.
+Circuit contains 0 nets, and 4 disconnected pins.
+Contents of circuit 2:  Circuit: 'sky130_fd_sc_hd__decap_8'
+Circuit sky130_fd_sc_hd__decap_8 contains 0 device instances.
+Circuit contains 0 nets.
+
+Circuit sky130_fd_sc_hd__decap_8 contains no devices.
+
+Contents of circuit 1:  Circuit: 'sky130_fd_sc_hd__fill_2'
+Circuit sky130_fd_sc_hd__fill_2 contains 0 device instances.
+Circuit contains 0 nets, and 4 disconnected pins.
+Contents of circuit 2:  Circuit: 'sky130_fd_sc_hd__fill_2'
+Circuit sky130_fd_sc_hd__fill_2 contains 0 device instances.
+Circuit contains 0 nets.
+
+Circuit sky130_fd_sc_hd__fill_2 contains no devices.
+
+Contents of circuit 1:  Circuit: 'sky130_fd_sc_hd__conb_1'
+Circuit sky130_fd_sc_hd__conb_1 contains 0 device instances.
+Circuit contains 0 nets, and 6 disconnected pins.
+Contents of circuit 2:  Circuit: 'sky130_fd_sc_hd__conb_1'
+Circuit sky130_fd_sc_hd__conb_1 contains 0 device instances.
+Circuit contains 0 nets.
+
+Circuit sky130_fd_sc_hd__conb_1 contains no devices.
+
+Contents of circuit 1:  Circuit: 'cpu_top'
+Circuit cpu_top contains 97194 device instances.
+  Class: sky130_ef_sc_hd__decap_12 instances: 54920
+  Class: sky130_fd_sc_hd__conb_1 instances:  14
+  Class: sky130_fd_sc_hd__decap_3 instances: 868
+  Class: sky130_fd_sc_hd__decap_4 instances: 353
+  Class: sky130_fd_sc_hd__decap_6 instances: 13209
+  Class: sky130_fd_sc_hd__decap_8 instances: 185
+  Class: sky130_fd_sc_hd__tapvpwrvgnd_1 instances: 13718
+  Class: sky130_fd_sc_hd__fill_1 instances: 13913
+  Class: sky130_fd_sc_hd__fill_2 instances:  14
+Circuit contains 30 nets, and 3 disconnected pins.
+Contents of circuit 2:  Circuit: 'cpu_top'
+Circuit cpu_top contains 97194 device instances.
+  Class: sky130_ef_sc_hd__decap_12 instances: 54920
+  Class: sky130_fd_sc_hd__conb_1 instances:  14
+  Class: sky130_fd_sc_hd__decap_3 instances: 868
+  Class: sky130_fd_sc_hd__decap_4 instances: 353
+  Class: sky130_fd_sc_hd__decap_6 instances: 13209
+  Class: sky130_fd_sc_hd__decap_8 instances: 185
+  Class: sky130_fd_sc_hd__tapvpwrvgnd_1 instances: 13718
+  Class: sky130_fd_sc_hd__fill_1 instances: 13913
+  Class: sky130_fd_sc_hd__fill_2 instances:  14
+Circuit contains 30 nets, and 3 disconnected pins.
+
+Circuit was modified by parallel/series device merging.
+New circuit summary:
+
+Contents of circuit 1:  Circuit: 'cpu_top'
+Circuit cpu_top contains 22 device instances.
+  Class: sky130_ef_sc_hd__decap_12 instances:   1
+  Class: sky130_fd_sc_hd__conb_1 instances:  14
+  Class: sky130_fd_sc_hd__decap_3 instances:   1
+  Class: sky130_fd_sc_hd__decap_4 instances:   1
+  Class: sky130_fd_sc_hd__decap_6 instances:   1
+  Class: sky130_fd_sc_hd__decap_8 instances:   1
+  Class: sky130_fd_sc_hd__tapvpwrvgnd_1 instances:   1
+  Class: sky130_fd_sc_hd__fill_1 instances:   1
+  Class: sky130_fd_sc_hd__fill_2 instances:   1
+Circuit contains 30 nets, and 3 disconnected pins.
+Contents of circuit 2:  Circuit: 'cpu_top'
+Circuit cpu_top contains 22 device instances.
+  Class: sky130_ef_sc_hd__decap_12 instances:   1
+  Class: sky130_fd_sc_hd__conb_1 instances:  14
+  Class: sky130_fd_sc_hd__decap_3 instances:   1
+  Class: sky130_fd_sc_hd__decap_4 instances:   1
+  Class: sky130_fd_sc_hd__decap_6 instances:   1
+  Class: sky130_fd_sc_hd__decap_8 instances:   1
+  Class: sky130_fd_sc_hd__tapvpwrvgnd_1 instances:   1
+  Class: sky130_fd_sc_hd__fill_1 instances:   1
+  Class: sky130_fd_sc_hd__fill_2 instances:   1
+Circuit contains 30 nets, and 3 disconnected pins.
+
+Circuit 1 contains 22 devices, Circuit 2 contains 22 devices.
+Circuit 1 contains 30 nets,    Circuit 2 contains 30 nets.
+
+
+Final result: 
+Circuits match uniquely.
+.
+Logging to file "/openlane/designs/6th_project/runs/RUN_2025.06.16_13.48.20/logs/signoff/37-cpu_top.lef.lvs.log" disabled
+LVS Done.

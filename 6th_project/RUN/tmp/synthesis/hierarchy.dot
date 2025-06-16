@@ -1,0 +1,35 @@
+digraph "cpu_top" {
+label="cpu_top";
+rankdir="LR";
+remincross=true;
+n1 [ shape=diamond, label="btn_sync", color="black", fontcolor="black" ];
+n2 [ shape=diamond, label="step_enable", color="black", fontcolor="black" ];
+n3 [ shape=diamond, label="display_data", color="black", fontcolor="black" ];
+n4 [ shape=octagon, label="seg2", color="black", fontcolor="black" ];
+n5 [ shape=octagon, label="seg1", color="black", fontcolor="black" ];
+n6 [ shape=octagon, label="control_btn", color="black", fontcolor="black" ];
+n7 [ shape=octagon, label="reset", color="black", fontcolor="black" ];
+n8 [ shape=octagon, label="clk", color="black", fontcolor="black" ];
+c10 [ shape=record, label="{{<p8> clk|<p9> data}|display\nseven_seg_dual|{<p5> seg1|<p4> seg2}}",  ];
+x0 [ shape=record, style=rounded, label="<s0> 15:0 - 15:0 ", color="black", fontcolor="black" ];
+x0:e -> c10:p9:w [arrowhead=odiamond, arrowtail=odiamond, dir=both, color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+c13 [ shape=record, label="{{<p8> clk|<p11> enable|<p7> reset}|cpu\ncpu_core|{<p12> display_out}}",  ];
+c15 [ shape=record, label="{{<p14> btn_pulse|<p8> clk|<p7> reset}|step_ctrl\nstep_controller|{<p2> step_enable}}",  ];
+c18 [ shape=record, label="{{<p16> btn_in|<p8> clk|<p7> reset}|btn_debounce\ndebounce_sync|{<p17> btn_out}}",  ];
+c18:p17:e -> n1:w [color="black", fontcolor="black", label=""];
+n1:e -> c15:p14:w [color="black", fontcolor="black", label=""];
+c15:p2:e -> n2:w [color="black", fontcolor="black", label=""];
+n2:e -> c13:p11:w [color="black", fontcolor="black", label=""];
+c13:p12:e -> n3:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n3:e -> x0:s0:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+c10:p4:e -> n4:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+c10:p5:e -> n5:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+n6:e -> c18:p16:w [color="black", fontcolor="black", label=""];
+n7:e -> c13:p7:w [color="black", fontcolor="black", label=""];
+n7:e -> c15:p7:w [color="black", fontcolor="black", label=""];
+n7:e -> c18:p7:w [color="black", fontcolor="black", label=""];
+n8:e -> c10:p8:w [color="black", fontcolor="black", label=""];
+n8:e -> c13:p8:w [color="black", fontcolor="black", label=""];
+n8:e -> c15:p8:w [color="black", fontcolor="black", label=""];
+n8:e -> c18:p8:w [color="black", fontcolor="black", label=""];
+}

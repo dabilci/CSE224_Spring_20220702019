@@ -1,0 +1,60 @@
+%Warning-EOFNEWLINE: /openlane/designs/6th_project/src/seven_seg_dual.v:52:11: Missing newline at end of file (POSIX 3.206).
+                                                                             : ... Suggest add newline.
+   52 | endmodule 
+      |           ^
+                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=5.018
+                     ... Use "/* verilator lint_off EOFNEWLINE */" and lint_on around source to disable this message.
+%Warning-EOFNEWLINE: /openlane/designs/6th_project/src/instruction_memory.v:33:11: Missing newline at end of file (POSIX 3.206).
+                                                                                 : ... Suggest add newline.
+   33 | endmodule 
+      |           ^
+%Warning-EOFNEWLINE: /openlane/designs/6th_project/src/cpu_core.v:121:11: Missing newline at end of file (POSIX 3.206).
+                                                                        : ... Suggest add newline.
+  121 | endmodule 
+      |           ^
+%Warning-EOFNEWLINE: /openlane/designs/6th_project/src/cpu_top.v:41:11: Missing newline at end of file (POSIX 3.206).
+                                                                      : ... Suggest add newline.
+   41 | endmodule 
+      |           ^
+%Warning-EOFNEWLINE: /openlane/designs/6th_project/src/debounce_sync.v:36:11: Missing newline at end of file (POSIX 3.206).
+                                                                            : ... Suggest add newline.
+   36 | endmodule 
+      |           ^
+%Warning-EOFNEWLINE: /openlane/designs/6th_project/src/alu.v:25:11: Missing newline at end of file (POSIX 3.206).
+                                                                  : ... Suggest add newline.
+   25 | endmodule 
+      |           ^
+%Warning-EOFNEWLINE: /openlane/designs/6th_project/src/step_controller.v:23:11: Missing newline at end of file (POSIX 3.206).
+                                                                              : ... Suggest add newline.
+   23 | endmodule 
+      |           ^
+%Warning-UNUSEDSIGNAL: /openlane/designs/6th_project/src/cpu_top.v:9:13: Bits of signal are not used: 'display_data'[31:16]
+                                                                       : ... note: In instance 'cpu_top'
+    9 | wire [31:0] display_data;
+      |             ^~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /openlane/designs/6th_project/src/seven_seg_dual.v:2:11: Signal is not used: 'clk'
+                                                                              : ... note: In instance 'cpu_top.display'
+    2 |     input clk,
+      |           ^~~
+%Warning-UNUSEDSIGNAL: /openlane/designs/6th_project/src/seven_seg_dual.v:3:18: Bits of signal are not used: 'data'[15:8]
+                                                                              : ... note: In instance 'cpu_top.display'
+    3 |     input [15:0] data,
+      |                  ^~~~
+%Warning-UNUSEDSIGNAL: /openlane/designs/6th_project/src/cpu_core.v:22:13: Signal is not used: 'alu_result'
+                                                                         : ... note: In instance 'cpu_top.cpu'
+   22 | wire [31:0] alu_result;
+      |             ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /openlane/designs/6th_project/src/cpu_core.v:24:6: Signal is not used: 'zero_flag'
+                                                                        : ... note: In instance 'cpu_top.cpu'
+   24 | wire zero_flag;
+      |      ^~~~~~~~~
+%Warning-UNUSEDSIGNAL: /openlane/designs/6th_project/src/cpu_core.v:25:5: Signal is not used: 'pc_write_enable'
+                                                                        : ... note: In instance 'cpu_top.cpu'
+   25 | reg pc_write_enable;
+      |     ^~~~~~~~~~~~~~~
+%Warning-CASEOVERLAP: /openlane/designs/6th_project/src/cpu_core.v:102:13: Case conditions overlap
+  102 |             J: begin
+      |             ^
+                      /openlane/designs/6th_project/src/cpu_core.v:86:13: ... Location of overlapping condition
+   86 |             SHIFTL: begin
+      |             ^~~~~~

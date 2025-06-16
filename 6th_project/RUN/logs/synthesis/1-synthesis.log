@@ -1,0 +1,1622 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.38 (git sha1 543faed9c8c, clang++ 17.0.6 -fPIC -Os)
+
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Liberty frontend: /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+2. Executing Verilog-2005 frontend: /openlane/designs/6th_project/src/seven_seg_dual.v
+Parsing SystemVerilog input from `/openlane/designs/6th_project/src/seven_seg_dual.v' to AST representation.
+Storing AST representation for module `$abstract\seven_seg_dual'.
+Storing AST representation for module `$abstract\seven_seg_decoder'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /openlane/designs/6th_project/src/instruction_memory.v
+Parsing SystemVerilog input from `/openlane/designs/6th_project/src/instruction_memory.v' to AST representation.
+Storing AST representation for module `$abstract\instruction_memory'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /openlane/designs/6th_project/src/cpu_core.v
+Parsing SystemVerilog input from `/openlane/designs/6th_project/src/cpu_core.v' to AST representation.
+Storing AST representation for module `$abstract\cpu_core'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /openlane/designs/6th_project/src/cpu_top.v
+Parsing SystemVerilog input from `/openlane/designs/6th_project/src/cpu_top.v' to AST representation.
+Storing AST representation for module `$abstract\cpu_top'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /openlane/designs/6th_project/src/debounce_sync.v
+Parsing SystemVerilog input from `/openlane/designs/6th_project/src/debounce_sync.v' to AST representation.
+Storing AST representation for module `$abstract\debounce_sync'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: /openlane/designs/6th_project/src/alu.v
+Parsing SystemVerilog input from `/openlane/designs/6th_project/src/alu.v' to AST representation.
+Storing AST representation for module `$abstract\alu'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: /openlane/designs/6th_project/src/step_controller.v
+Parsing SystemVerilog input from `/openlane/designs/6th_project/src/step_controller.v' to AST representation.
+Storing AST representation for module `$abstract\step_controller'.
+Successfully finished Verilog frontend.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+10. Executing AST frontend in derive mode using pre-parsed AST for module `\cpu_top'.
+Generating RTLIL representation for module `\cpu_top'.
+
+10.1. Analyzing design hierarchy..
+Top module:  \cpu_top
+
+10.2. Executing AST frontend in derive mode using pre-parsed AST for module `\seven_seg_dual'.
+Generating RTLIL representation for module `\seven_seg_dual'.
+
+10.3. Executing AST frontend in derive mode using pre-parsed AST for module `\cpu_core'.
+Generating RTLIL representation for module `\cpu_core'.
+Warning: Replacing memory \registers with list of registers. See /openlane/designs/6th_project/src/cpu_core.v:60
+
+10.4. Executing AST frontend in derive mode using pre-parsed AST for module `\step_controller'.
+Generating RTLIL representation for module `\step_controller'.
+
+10.5. Executing AST frontend in derive mode using pre-parsed AST for module `\debounce_sync'.
+Generating RTLIL representation for module `\debounce_sync'.
+
+10.6. Analyzing design hierarchy..
+Top module:  \cpu_top
+Used module:     \seven_seg_dual
+Used module:     \cpu_core
+Used module:     \step_controller
+Used module:     \debounce_sync
+
+10.7. Executing AST frontend in derive mode using pre-parsed AST for module `\alu'.
+Generating RTLIL representation for module `\alu'.
+
+10.8. Executing AST frontend in derive mode using pre-parsed AST for module `\instruction_memory'.
+Generating RTLIL representation for module `\instruction_memory'.
+
+10.9. Executing AST frontend in derive mode using pre-parsed AST for module `\seven_seg_decoder'.
+Generating RTLIL representation for module `\seven_seg_decoder'.
+
+10.10. Analyzing design hierarchy..
+Top module:  \cpu_top
+Used module:     \seven_seg_dual
+Used module:         \seven_seg_decoder
+Used module:     \cpu_core
+Used module:         \alu
+Used module:         \instruction_memory
+Used module:     \step_controller
+Used module:     \debounce_sync
+
+10.11. Analyzing design hierarchy..
+Top module:  \cpu_top
+Used module:     \seven_seg_dual
+Used module:         \seven_seg_decoder
+Used module:     \cpu_core
+Used module:         \alu
+Used module:         \instruction_memory
+Used module:     \step_controller
+Used module:     \debounce_sync
+Removing unused module `$abstract\step_controller'.
+Removing unused module `$abstract\alu'.
+Removing unused module `$abstract\debounce_sync'.
+Removing unused module `$abstract\cpu_top'.
+Removing unused module `$abstract\cpu_core'.
+Removing unused module `$abstract\instruction_memory'.
+Removing unused module `$abstract\seven_seg_decoder'.
+Removing unused module `$abstract\seven_seg_dual'.
+Removed 8 unused modules.
+
+11. Generating Graphviz representation of design.
+Writing dot description to `/openlane/designs/6th_project/runs/RUN_2025.06.16_13.48.20/tmp/synthesis/hierarchy.dot'.
+Dumping module cpu_top to page 1.
+Renaming module cpu_top to cpu_top.
+
+12. Executing TRIBUF pass.
+
+13. Executing HIERARCHY pass (managing design hierarchy).
+
+13.1. Analyzing design hierarchy..
+Top module:  \cpu_top
+Used module:     \seven_seg_dual
+Used module:         \seven_seg_decoder
+Used module:     \cpu_core
+Used module:         \alu
+Used module:         \instruction_memory
+Used module:     \step_controller
+Used module:     \debounce_sync
+
+13.2. Analyzing design hierarchy..
+Top module:  \cpu_top
+Used module:     \seven_seg_dual
+Used module:         \seven_seg_decoder
+Used module:     \cpu_core
+Used module:         \alu
+Used module:         \instruction_memory
+Used module:     \step_controller
+Used module:     \debounce_sync
+Removed 0 unused modules.
+
+14. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+15. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/6th_project/src/alu.v:14$45 in module alu.
+Marked 2 switch rules as full_case in process $proc$/openlane/designs/6th_project/src/debounce_sync.v:12$41 in module debounce_sync.
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/6th_project/src/step_controller.v:13$40 in module step_controller.
+Removed 1 dead cases from process $proc$/openlane/designs/6th_project/src/cpu_core.v:0$35 in module cpu_core.
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/6th_project/src/cpu_core.v:0$35 in module cpu_core.
+Removed 1 dead cases from process $proc$/openlane/designs/6th_project/src/cpu_core.v:0$32 in module cpu_core.
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/6th_project/src/cpu_core.v:0$32 in module cpu_core.
+Removed 1 dead cases from process $proc$/openlane/designs/6th_project/src/cpu_core.v:55$8 in module cpu_core.
+Marked 6 switch rules as full_case in process $proc$/openlane/designs/6th_project/src/cpu_core.v:55$8 in module cpu_core.
+Removed 1 dead cases from process $proc$/openlane/designs/6th_project/src/seven_seg_dual.v:30$112 in module seven_seg_decoder.
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/6th_project/src/seven_seg_dual.v:30$112 in module seven_seg_decoder.
+Removed a total of 4 dead cases.
+
+16. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 5 redundant assignments.
+Promoted 26 assignments to connections.
+
+17. Executing PROC_INIT pass (extract init attributes).
+
+18. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \reset in `\debounce_sync.$proc$/openlane/designs/6th_project/src/debounce_sync.v:12$41'.
+Found async reset \reset in `\step_controller.$proc$/openlane/designs/6th_project/src/step_controller.v:13$40'.
+Found async reset \reset in `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+
+19. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 1 switch.
+<suppressed ~10 debug messages>
+
+20. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\instruction_memory.$proc$/openlane/designs/6th_project/src/instruction_memory.v:0$91'.
+Creating decoders for process `\alu.$proc$/openlane/designs/6th_project/src/alu.v:14$45'.
+     1/1: $1\result[31:0]
+Creating decoders for process `\debounce_sync.$proc$/openlane/designs/6th_project/src/debounce_sync.v:12$41'.
+     1/4: $0\counter[19:0]
+     2/4: $0\btn_sync2[0:0]
+     3/4: $0\btn_sync1[0:0]
+     4/4: $0\btn_state[0:0]
+Creating decoders for process `\step_controller.$proc$/openlane/designs/6th_project/src/step_controller.v:13$40'.
+     1/2: $0\step_enable[0:0]
+     2/2: $0\btn_prev[0:0]
+Creating decoders for process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:0$35'.
+     1/1: $1$mem2reg_rd$\registers$/openlane/designs/6th_project/src/cpu_core.v:38$2_DATA[31:0]$37
+Creating decoders for process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:0$32'.
+     1/1: $1$mem2reg_rd$\registers$/openlane/designs/6th_project/src/cpu_core.v:37$1_DATA[31:0]$34
+Creating decoders for process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+     1/43: $3$mem2reg_wr$\registers$/openlane/designs/6th_project/src/cpu_core.v:114$3_ADDR[4:0]$30
+     2/43: $3$mem2reg_wr$\registers$/openlane/designs/6th_project/src/cpu_core.v:114$3_DATA[31:0]$31
+     3/43: $2$mem2reg_wr$\registers$/openlane/designs/6th_project/src/cpu_core.v:114$3_DATA[31:0]$14
+     4/43: $2$mem2reg_wr$\registers$/openlane/designs/6th_project/src/cpu_core.v:114$3_ADDR[4:0]$13
+     5/43: $1$mem2reg_wr$\registers$/openlane/designs/6th_project/src/cpu_core.v:114$3_DATA[31:0]$12
+     6/43: $1$mem2reg_wr$\registers$/openlane/designs/6th_project/src/cpu_core.v:114$3_ADDR[4:0]$11
+     7/43: $0\registers[31][31:0]
+     8/43: $0\registers[30][31:0]
+     9/43: $0\registers[29][31:0]
+    10/43: $0\registers[28][31:0]
+    11/43: $0\registers[27][31:0]
+    12/43: $0\registers[26][31:0]
+    13/43: $0\registers[25][31:0]
+    14/43: $0\registers[24][31:0]
+    15/43: $0\registers[23][31:0]
+    16/43: $0\registers[22][31:0]
+    17/43: $0\registers[21][31:0]
+    18/43: $0\registers[20][31:0]
+    19/43: $0\registers[19][31:0]
+    20/43: $0\registers[18][31:0]
+    21/43: $0\registers[17][31:0]
+    22/43: $0\registers[16][31:0]
+    23/43: $0\registers[15][31:0]
+    24/43: $0\registers[14][31:0]
+    25/43: $0\registers[13][31:0]
+    26/43: $0\registers[12][31:0]
+    27/43: $0\registers[11][31:0]
+    28/43: $0\registers[10][31:0]
+    29/43: $0\registers[9][31:0]
+    30/43: $0\registers[8][31:0]
+    31/43: $0\registers[7][31:0]
+    32/43: $0\registers[6][31:0]
+    33/43: $0\registers[5][31:0]
+    34/43: $0\registers[4][31:0]
+    35/43: $0\registers[3][31:0]
+    36/43: $0\registers[2][31:0]
+    37/43: $0\registers[1][31:0]
+    38/43: $0\registers[0][31:0]
+    39/43: $0\write_reg[4:0]
+    40/43: $0\write_data[31:0]
+    41/43: $0\reg_write_enable[0:0]
+    42/43: $0\pc_write_enable[0:0]
+    43/43: $0\pc[31:0]
+Creating decoders for process `\seven_seg_decoder.$proc$/openlane/designs/6th_project/src/seven_seg_dual.v:30$112'.
+     1/1: $1\segments[6:0]
+
+21. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\instruction_memory.$memwr$\memory$/openlane/designs/6th_project/src/instruction_memory.v:9$50_EN' from process `\instruction_memory.$proc$/openlane/designs/6th_project/src/instruction_memory.v:0$91'.
+No latch inferred for signal `\instruction_memory.$memwr$\memory$/openlane/designs/6th_project/src/instruction_memory.v:10$51_EN' from process `\instruction_memory.$proc$/openlane/designs/6th_project/src/instruction_memory.v:0$91'.
+No latch inferred for signal `\instruction_memory.$memwr$\memory$/openlane/designs/6th_project/src/instruction_memory.v:11$52_EN' from process `\instruction_memory.$proc$/openlane/designs/6th_project/src/instruction_memory.v:0$91'.
+No latch inferred for signal `\instruction_memory.$memwr$\memory$/openlane/designs/6th_project/src/instruction_memory.v:12$53_EN' from process `\instruction_memory.$proc$/openlane/designs/6th_project/src/instruction_memory.v:0$91'.
+No latch inferred for signal `\instruction_memory.$memwr$\memory$/openlane/designs/6th_project/src/instruction_memory.v:13$54_EN' from process `\instruction_memory.$proc$/openlane/designs/6th_project/src/instruction_memory.v:0$91'.
+No latch inferred for signal `\instruction_memory.$memwr$\memory$/openlane/designs/6th_project/src/instruction_memory.v:14$55_EN' from process `\instruction_memory.$proc$/openlane/designs/6th_project/src/instruction_memory.v:0$91'.
+No latch inferred for signal `\instruction_memory.$memwr$\memory$/openlane/designs/6th_project/src/instruction_memory.v:15$56_EN' from process `\instruction_memory.$proc$/openlane/designs/6th_project/src/instruction_memory.v:0$91'.
+No latch inferred for signal `\instruction_memory.$memwr$\memory$/openlane/designs/6th_project/src/instruction_memory.v:16$57_EN' from process `\instruction_memory.$proc$/openlane/designs/6th_project/src/instruction_memory.v:0$91'.
+No latch inferred for signal `\instruction_memory.$memwr$\memory$/openlane/designs/6th_project/src/instruction_memory.v:17$58_EN' from process `\instruction_memory.$proc$/openlane/designs/6th_project/src/instruction_memory.v:0$91'.
+No latch inferred for signal `\instruction_memory.$memwr$\memory$/openlane/designs/6th_project/src/instruction_memory.v:18$59_EN' from process `\instruction_memory.$proc$/openlane/designs/6th_project/src/instruction_memory.v:0$91'.
+No latch inferred for signal `\instruction_memory.$memwr$\memory$/openlane/designs/6th_project/src/instruction_memory.v:19$60_EN' from process `\instruction_memory.$proc$/openlane/designs/6th_project/src/instruction_memory.v:0$91'.
+No latch inferred for signal `\instruction_memory.$memwr$\memory$/openlane/designs/6th_project/src/instruction_memory.v:20$61_EN' from process `\instruction_memory.$proc$/openlane/designs/6th_project/src/instruction_memory.v:0$91'.
+No latch inferred for signal `\instruction_memory.$memwr$\memory$/openlane/designs/6th_project/src/instruction_memory.v:21$62_EN' from process `\instruction_memory.$proc$/openlane/designs/6th_project/src/instruction_memory.v:0$91'.
+No latch inferred for signal `\instruction_memory.$memwr$\memory$/openlane/designs/6th_project/src/instruction_memory.v:22$63_EN' from process `\instruction_memory.$proc$/openlane/designs/6th_project/src/instruction_memory.v:0$91'.
+No latch inferred for signal `\instruction_memory.$memwr$\memory$/openlane/designs/6th_project/src/instruction_memory.v:23$64_EN' from process `\instruction_memory.$proc$/openlane/designs/6th_project/src/instruction_memory.v:0$91'.
+No latch inferred for signal `\instruction_memory.$memwr$\memory$/openlane/designs/6th_project/src/instruction_memory.v:24$65_EN' from process `\instruction_memory.$proc$/openlane/designs/6th_project/src/instruction_memory.v:0$91'.
+No latch inferred for signal `\instruction_memory.$memwr$\memory$/openlane/designs/6th_project/src/instruction_memory.v:25$66_EN' from process `\instruction_memory.$proc$/openlane/designs/6th_project/src/instruction_memory.v:0$91'.
+No latch inferred for signal `\instruction_memory.$memwr$\memory$/openlane/designs/6th_project/src/instruction_memory.v:26$67_EN' from process `\instruction_memory.$proc$/openlane/designs/6th_project/src/instruction_memory.v:0$91'.
+No latch inferred for signal `\instruction_memory.$memwr$\memory$/openlane/designs/6th_project/src/instruction_memory.v:27$68_EN' from process `\instruction_memory.$proc$/openlane/designs/6th_project/src/instruction_memory.v:0$91'.
+No latch inferred for signal `\instruction_memory.$memwr$\memory$/openlane/designs/6th_project/src/instruction_memory.v:28$69_EN' from process `\instruction_memory.$proc$/openlane/designs/6th_project/src/instruction_memory.v:0$91'.
+No latch inferred for signal `\alu.\result' from process `\alu.$proc$/openlane/designs/6th_project/src/alu.v:14$45'.
+No latch inferred for signal `\cpu_core.$mem2reg_rd$\registers$/openlane/designs/6th_project/src/cpu_core.v:38$2_DATA' from process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:0$35'.
+No latch inferred for signal `\cpu_core.$mem2reg_rd$\registers$/openlane/designs/6th_project/src/cpu_core.v:37$1_DATA' from process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:0$32'.
+No latch inferred for signal `\seven_seg_decoder.\segments' from process `\seven_seg_decoder.$proc$/openlane/designs/6th_project/src/seven_seg_dual.v:30$112'.
+
+22. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\debounce_sync.\counter' using process `\debounce_sync.$proc$/openlane/designs/6th_project/src/debounce_sync.v:12$41'.
+  created $adff cell `$procdff$979' with positive edge clock and positive level reset.
+Creating register for signal `\debounce_sync.\btn_sync1' using process `\debounce_sync.$proc$/openlane/designs/6th_project/src/debounce_sync.v:12$41'.
+  created $adff cell `$procdff$980' with positive edge clock and positive level reset.
+Creating register for signal `\debounce_sync.\btn_sync2' using process `\debounce_sync.$proc$/openlane/designs/6th_project/src/debounce_sync.v:12$41'.
+  created $adff cell `$procdff$981' with positive edge clock and positive level reset.
+Creating register for signal `\debounce_sync.\btn_state' using process `\debounce_sync.$proc$/openlane/designs/6th_project/src/debounce_sync.v:12$41'.
+  created $adff cell `$procdff$982' with positive edge clock and positive level reset.
+Creating register for signal `\step_controller.\step_enable' using process `\step_controller.$proc$/openlane/designs/6th_project/src/step_controller.v:13$40'.
+  created $adff cell `$procdff$983' with positive edge clock and positive level reset.
+Creating register for signal `\step_controller.\btn_prev' using process `\step_controller.$proc$/openlane/designs/6th_project/src/step_controller.v:13$40'.
+  created $adff cell `$procdff$984' with positive edge clock and positive level reset.
+Creating register for signal `\cpu_core.\pc' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $adff cell `$procdff$985' with positive edge clock and positive level reset.
+Creating register for signal `\cpu_core.\pc_write_enable' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $adff cell `$procdff$986' with positive edge clock and positive level reset.
+Creating register for signal `\cpu_core.\reg_write_enable' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $adff cell `$procdff$987' with positive edge clock and positive level reset.
+Creating register for signal `\cpu_core.\write_data' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$990' with positive edge clock.
+Creating register for signal `\cpu_core.\write_reg' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$993' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[0]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $adff cell `$procdff$994' with positive edge clock and positive level reset.
+Creating register for signal `\cpu_core.\registers[1]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$997' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[2]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1000' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[3]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1003' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[4]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1006' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[5]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1009' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[6]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1012' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[7]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1015' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[8]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1018' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[9]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1021' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[10]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1024' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[11]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1027' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[12]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1030' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[13]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1033' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[14]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1036' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[15]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1039' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[16]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1042' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[17]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1045' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[18]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1048' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[19]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1051' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[20]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1054' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[21]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1057' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[22]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1060' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[23]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1063' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[24]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1066' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[25]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1069' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[26]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1072' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[27]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1075' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[28]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1078' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[29]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1081' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[30]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1084' with positive edge clock.
+Creating register for signal `\cpu_core.\registers[31]' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $dff cell `$procdff$1087' with positive edge clock.
+Creating register for signal `\cpu_core.$mem2reg_wr$\registers$/openlane/designs/6th_project/src/cpu_core.v:114$3_ADDR' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $adff cell `$procdff$1088' with positive edge clock and positive level reset.
+Creating register for signal `\cpu_core.$mem2reg_wr$\registers$/openlane/designs/6th_project/src/cpu_core.v:114$3_DATA' using process `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+  created $adff cell `$procdff$1089' with positive edge clock and positive level reset.
+
+23. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+24. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `instruction_memory.$proc$/openlane/designs/6th_project/src/instruction_memory.v:0$91'.
+Found and cleaned up 1 empty switch in `\alu.$proc$/openlane/designs/6th_project/src/alu.v:14$45'.
+Removing empty process `alu.$proc$/openlane/designs/6th_project/src/alu.v:14$45'.
+Found and cleaned up 2 empty switches in `\debounce_sync.$proc$/openlane/designs/6th_project/src/debounce_sync.v:12$41'.
+Removing empty process `debounce_sync.$proc$/openlane/designs/6th_project/src/debounce_sync.v:12$41'.
+Removing empty process `step_controller.$proc$/openlane/designs/6th_project/src/step_controller.v:13$40'.
+Found and cleaned up 1 empty switch in `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:0$35'.
+Removing empty process `cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:0$35'.
+Found and cleaned up 1 empty switch in `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:0$32'.
+Removing empty process `cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:0$32'.
+Found and cleaned up 5 empty switches in `\cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+Removing empty process `cpu_core.$proc$/openlane/designs/6th_project/src/cpu_core.v:55$8'.
+Found and cleaned up 1 empty switch in `\seven_seg_decoder.$proc$/openlane/designs/6th_project/src/seven_seg_dual.v:30$112'.
+Removing empty process `seven_seg_decoder.$proc$/openlane/designs/6th_project/src/seven_seg_dual.v:30$112'.
+Cleaned up 11 empty switches.
+
+25. Executing CHECK pass (checking for obvious problems).
+Checking module cpu_top...
+Checking module instruction_memory...
+Checking module alu...
+Checking module debounce_sync...
+Checking module step_controller...
+Checking module cpu_core...
+Checking module seven_seg_dual...
+Checking module seven_seg_decoder...
+Found and reported 0 problems.
+
+26. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+Optimizing module instruction_memory.
+Optimizing module alu.
+<suppressed ~2 debug messages>
+Optimizing module debounce_sync.
+Optimizing module step_controller.
+Optimizing module cpu_core.
+<suppressed ~7 debug messages>
+Optimizing module seven_seg_dual.
+Optimizing module seven_seg_decoder.
+
+27. Executing FLATTEN pass (flatten design).
+Deleting now unused module instruction_memory.
+Deleting now unused module alu.
+Deleting now unused module debounce_sync.
+Deleting now unused module step_controller.
+Deleting now unused module cpu_core.
+Deleting now unused module seven_seg_dual.
+Deleting now unused module seven_seg_decoder.
+<suppressed ~8 debug messages>
+
+28. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+
+29. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+Removed 24 unused cells and 216 unused wires.
+<suppressed ~29 debug messages>
+
+30. Executing OPT pass (performing simple optimizations).
+
+30.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+
+30.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cpu_top'.
+<suppressed ~54 debug messages>
+Removed a total of 18 cells.
+
+30.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cpu_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~40 debug messages>
+
+30.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cpu_top.
+    New ctrl vector for $pmux cell $flatten\cpu.$procmux$935: { $auto$opt_reduce.cc:134:opt_pmux$1093 $auto$opt_reduce.cc:134:opt_pmux$1091 }
+    New ctrl vector for $pmux cell $flatten\cpu.$procmux$955: $auto$opt_reduce.cc:134:opt_pmux$1095
+    New ctrl vector for $pmux cell $flatten\cpu.$procmux$970: $flatten\cpu.$procmux$971_CMP
+  Optimizing cells in module \cpu_top.
+Performed a total of 3 changes.
+
+30.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cpu_top'.
+Removed a total of 0 cells.
+
+30.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+30.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+Removed 0 unused cells and 20 unused wires.
+<suppressed ~3 debug messages>
+
+30.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+
+30.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+30.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cpu_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~40 debug messages>
+
+30.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cpu_top.
+Performed a total of 0 changes.
+
+30.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cpu_top'.
+Removed a total of 0 cells.
+
+30.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+30.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+
+30.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+
+30.16. Finished OPT passes. (There is nothing left to do.)
+
+31. Executing FSM pass (extract and optimize FSM).
+
+31.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking cpu_top.cpu.registers[0] as FSM state register:
+    Users of register don't seem to benefit from recoding.
+
+31.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+31.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+31.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+
+31.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+31.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+31.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+31.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+32. Executing OPT pass (performing simple optimizations).
+
+32.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+
+32.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cpu_top'.
+Removed a total of 0 cells.
+
+32.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cpu_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~40 debug messages>
+
+32.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cpu_top.
+Performed a total of 0 changes.
+
+32.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cpu_top'.
+Removed a total of 0 cells.
+
+32.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $flatten\cpu.$procdff$997 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[1]).
+Adding EN signal on $flatten\cpu.$procdff$994 ($adff) from module cpu_top (D = 0, Q = \cpu.registers[0]).
+Adding EN signal on $flatten\cpu.$procdff$993 ($dff) from module cpu_top (D = $flatten\cpu.$procmux$935_Y, Q = \cpu.write_reg).
+Adding EN signal on $flatten\cpu.$procdff$990 ($dff) from module cpu_top (D = $flatten\cpu.$procmux$945_Y, Q = \cpu.write_data).
+Adding EN signal on $flatten\cpu.$procdff$987 ($adff) from module cpu_top (D = $flatten\cpu.$procmux$955_Y, Q = \cpu.reg_write_enable).
+Adding EN signal on $flatten\cpu.$procdff$985 ($adff) from module cpu_top (D = $flatten\cpu.$procmux$970_Y, Q = \cpu.pc).
+Adding EN signal on $flatten\cpu.$procdff$1087 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[31]).
+Adding EN signal on $flatten\cpu.$procdff$1084 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[30]).
+Adding EN signal on $flatten\cpu.$procdff$1081 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[29]).
+Adding EN signal on $flatten\cpu.$procdff$1078 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[28]).
+Adding EN signal on $flatten\cpu.$procdff$1075 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[27]).
+Adding EN signal on $flatten\cpu.$procdff$1072 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[26]).
+Adding EN signal on $flatten\cpu.$procdff$1069 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[25]).
+Adding EN signal on $flatten\cpu.$procdff$1066 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[24]).
+Adding EN signal on $flatten\cpu.$procdff$1063 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[23]).
+Adding EN signal on $flatten\cpu.$procdff$1060 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[22]).
+Adding EN signal on $flatten\cpu.$procdff$1057 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[21]).
+Adding EN signal on $flatten\cpu.$procdff$1054 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[20]).
+Adding EN signal on $flatten\cpu.$procdff$1051 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[19]).
+Adding EN signal on $flatten\cpu.$procdff$1048 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[18]).
+Adding EN signal on $flatten\cpu.$procdff$1045 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[17]).
+Adding EN signal on $flatten\cpu.$procdff$1042 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[16]).
+Adding EN signal on $flatten\cpu.$procdff$1039 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[15]).
+Adding EN signal on $flatten\cpu.$procdff$1036 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[14]).
+Adding EN signal on $flatten\cpu.$procdff$1033 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[13]).
+Adding EN signal on $flatten\cpu.$procdff$1030 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[12]).
+Adding EN signal on $flatten\cpu.$procdff$1027 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[11]).
+Adding EN signal on $flatten\cpu.$procdff$1024 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[10]).
+Adding EN signal on $flatten\cpu.$procdff$1021 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[9]).
+Adding EN signal on $flatten\cpu.$procdff$1018 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[8]).
+Adding EN signal on $flatten\cpu.$procdff$1015 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[7]).
+Adding EN signal on $flatten\cpu.$procdff$1012 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[6]).
+Adding EN signal on $flatten\cpu.$procdff$1009 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[5]).
+Adding EN signal on $flatten\cpu.$procdff$1006 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[4]).
+Adding EN signal on $flatten\cpu.$procdff$1003 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[3]).
+Adding EN signal on $flatten\cpu.$procdff$1000 ($dff) from module cpu_top (D = \cpu.write_data, Q = \cpu.registers[2]).
+Adding EN signal on $flatten\btn_debounce.$procdff$982 ($adff) from module cpu_top (D = \btn_debounce.btn_sync2, Q = \btn_debounce.btn_state).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 1 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 2 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 3 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 4 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 5 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 6 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 7 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 8 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 9 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 10 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 11 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 12 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 13 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 14 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 15 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 16 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 17 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 18 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 19 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 20 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 21 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 22 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 23 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 24 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 25 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 26 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 27 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 28 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 29 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 30 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+Setting constant 0-bit at position 31 on $auto$ff.cc:266:slice$1101 ($adffe) from module cpu_top.
+
+32.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+Removed 133 unused cells and 133 unused wires.
+<suppressed ~134 debug messages>
+
+32.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+<suppressed ~2 debug messages>
+
+32.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+32.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cpu_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+32.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cpu_top.
+Performed a total of 0 changes.
+
+32.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cpu_top'.
+<suppressed ~96 debug messages>
+Removed a total of 32 cells.
+
+32.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+32.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+Removed 0 unused cells and 32 unused wires.
+<suppressed ~1 debug messages>
+
+32.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+
+32.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+32.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cpu_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+32.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cpu_top.
+Performed a total of 0 changes.
+
+32.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cpu_top'.
+Removed a total of 0 cells.
+
+32.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+32.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+
+32.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+
+32.23. Finished OPT passes. (There is nothing left to do.)
+
+33. Executing WREDUCE pass (reducing word size of cells).
+Removed top 24 address bits (of 32) from memory init port cpu_top.$flatten\cpu.\imem.$meminit$\memory$/openlane/designs/6th_project/src/instruction_memory.v:10$72 (cpu.imem.memory).
+Removed top 24 address bits (of 32) from memory init port cpu_top.$flatten\cpu.\imem.$meminit$\memory$/openlane/designs/6th_project/src/instruction_memory.v:11$73 (cpu.imem.memory).
+Removed top 24 address bits (of 32) from memory init port cpu_top.$flatten\cpu.\imem.$meminit$\memory$/openlane/designs/6th_project/src/instruction_memory.v:12$74 (cpu.imem.memory).
+Removed top 24 address bits (of 32) from memory init port cpu_top.$flatten\cpu.\imem.$meminit$\memory$/openlane/designs/6th_project/src/instruction_memory.v:13$75 (cpu.imem.memory).
+Removed top 24 address bits (of 32) from memory init port cpu_top.$flatten\cpu.\imem.$meminit$\memory$/openlane/designs/6th_project/src/instruction_memory.v:14$76 (cpu.imem.memory).
+Removed top 24 address bits (of 32) from memory init port cpu_top.$flatten\cpu.\imem.$meminit$\memory$/openlane/designs/6th_project/src/instruction_memory.v:15$77 (cpu.imem.memory).
+Removed top 24 address bits (of 32) from memory init port cpu_top.$flatten\cpu.\imem.$meminit$\memory$/openlane/designs/6th_project/src/instruction_memory.v:16$78 (cpu.imem.memory).
+Removed top 24 address bits (of 32) from memory init port cpu_top.$flatten\cpu.\imem.$meminit$\memory$/openlane/designs/6th_project/src/instruction_memory.v:17$79 (cpu.imem.memory).
+Removed top 24 address bits (of 32) from memory init port cpu_top.$flatten\cpu.\imem.$meminit$\memory$/openlane/designs/6th_project/src/instruction_memory.v:18$80 (cpu.imem.memory).
+Removed top 24 address bits (of 32) from memory init port cpu_top.$flatten\cpu.\imem.$meminit$\memory$/openlane/designs/6th_project/src/instruction_memory.v:19$81 (cpu.imem.memory).
+Removed top 24 address bits (of 32) from memory init port cpu_top.$flatten\cpu.\imem.$meminit$\memory$/openlane/designs/6th_project/src/instruction_memory.v:20$82 (cpu.imem.memory).
+Removed top 24 address bits (of 32) from memory init port cpu_top.$flatten\cpu.\imem.$meminit$\memory$/openlane/designs/6th_project/src/instruction_memory.v:21$83 (cpu.imem.memory).
+Removed top 24 address bits (of 32) from memory init port cpu_top.$flatten\cpu.\imem.$meminit$\memory$/openlane/designs/6th_project/src/instruction_memory.v:22$84 (cpu.imem.memory).
+Removed top 24 address bits (of 32) from memory init port cpu_top.$flatten\cpu.\imem.$meminit$\memory$/openlane/designs/6th_project/src/instruction_memory.v:23$85 (cpu.imem.memory).
+Removed top 24 address bits (of 32) from memory init port cpu_top.$flatten\cpu.\imem.$meminit$\memory$/openlane/designs/6th_project/src/instruction_memory.v:24$86 (cpu.imem.memory).
+Removed top 24 address bits (of 32) from memory init port cpu_top.$flatten\cpu.\imem.$meminit$\memory$/openlane/designs/6th_project/src/instruction_memory.v:25$87 (cpu.imem.memory).
+Removed top 24 address bits (of 32) from memory init port cpu_top.$flatten\cpu.\imem.$meminit$\memory$/openlane/designs/6th_project/src/instruction_memory.v:26$88 (cpu.imem.memory).
+Removed top 24 address bits (of 32) from memory init port cpu_top.$flatten\cpu.\imem.$meminit$\memory$/openlane/designs/6th_project/src/instruction_memory.v:27$89 (cpu.imem.memory).
+Removed top 24 address bits (of 32) from memory init port cpu_top.$flatten\cpu.\imem.$meminit$\memory$/openlane/designs/6th_project/src/instruction_memory.v:28$90 (cpu.imem.memory).
+Removed top 24 address bits (of 32) from memory init port cpu_top.$flatten\cpu.\imem.$meminit$\memory$/openlane/designs/6th_project/src/instruction_memory.v:9$71 (cpu.imem.memory).
+Removed top 28 address bits (of 32) from memory init port cpu_top.$flatten\display.\dec1.$auto$mem.cc:328:emit$116 ($flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114).
+Removed top 28 address bits (of 32) from memory init port cpu_top.$flatten\display.\dec2.$auto$mem.cc:328:emit$116 ($flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114).
+Removed top 31 bits (of 32) from port B of cell cpu_top.$flatten\btn_debounce.$add$/openlane/designs/6th_project/src/debounce_sync.v:25$43 ($add).
+Removed top 12 bits (of 32) from port Y of cell cpu_top.$flatten\btn_debounce.$add$/openlane/designs/6th_project/src/debounce_sync.v:25$43 ($add).
+Removed top 3 bits (of 6) from port B of cell cpu_top.$flatten\cpu.$procmux$971_CMP0 ($eq).
+Removed top 2 bits (of 6) from port B of cell cpu_top.$flatten\cpu.$procmux$939_CMP0 ($eq).
+Removed top 2 bits (of 6) from port B of cell cpu_top.$flatten\cpu.$procmux$937_CMP0 ($eq).
+Removed top 4 bits (of 6) from port B of cell cpu_top.$flatten\cpu.$procmux$936_CMP0 ($eq).
+Removed top 4 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$924_CMP0 ($eq).
+Removed top 3 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$886_CMP0 ($eq).
+Removed top 3 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$849_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$813_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$778_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$744_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$711_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$679_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$648_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$618_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$589_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$561_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$534_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$508_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$483_CMP0 ($eq).
+Removed top 4 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$196_CMP0 ($eq).
+Removed top 3 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$195_CMP0 ($eq).
+Removed top 3 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$194_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$193_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$192_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$191_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$190_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$189_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$188_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$187_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$186_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$185_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$184_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$183_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$182_CMP0 ($eq).
+Removed top 4 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$163_CMP0 ($eq).
+Removed top 3 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$162_CMP0 ($eq).
+Removed top 3 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$161_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$160_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$159_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$158_CMP0 ($eq).
+Removed top 2 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$157_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$156_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$155_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$154_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$153_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$152_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$151_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$150_CMP0 ($eq).
+Removed top 1 bits (of 5) from port B of cell cpu_top.$flatten\cpu.$procmux$149_CMP0 ($eq).
+Removed top 29 bits (of 32) from port B of cell cpu_top.$flatten\cpu.$add$/openlane/designs/6th_project/src/cpu_core.v:109$27 ($add).
+Removed top 12 bits (of 32) from wire cpu_top.$flatten\btn_debounce.$add$/openlane/designs/6th_project/src/debounce_sync.v:25$43_Y.
+
+34. Executing PEEPOPT pass (run peephole optimizers).
+
+35. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+36. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module cpu_top:
+  creating $macc model for $flatten\btn_debounce.$add$/openlane/designs/6th_project/src/debounce_sync.v:25$43 ($add).
+  creating $macc model for $flatten\cpu.$add$/openlane/designs/6th_project/src/cpu_core.v:109$27 ($add).
+  creating $macc model for $flatten\cpu.$add$/openlane/designs/6th_project/src/cpu_core.v:67$15 ($add).
+  creating $macc model for $flatten\cpu.$add$/openlane/designs/6th_project/src/cpu_core.v:74$17 ($add).
+  creating $macc model for $flatten\cpu.$add$/openlane/designs/6th_project/src/cpu_core.v:96$25 ($add).
+  creating $macc model for $flatten\cpu.$sub$/openlane/designs/6th_project/src/cpu_core.v:81$19 ($sub).
+  creating $alu model for $macc $flatten\cpu.$sub$/openlane/designs/6th_project/src/cpu_core.v:81$19.
+  creating $alu model for $macc $flatten\cpu.$add$/openlane/designs/6th_project/src/cpu_core.v:96$25.
+  creating $alu model for $macc $flatten\cpu.$add$/openlane/designs/6th_project/src/cpu_core.v:74$17.
+  creating $alu model for $macc $flatten\cpu.$add$/openlane/designs/6th_project/src/cpu_core.v:67$15.
+  creating $alu model for $macc $flatten\cpu.$add$/openlane/designs/6th_project/src/cpu_core.v:109$27.
+  creating $alu model for $macc $flatten\btn_debounce.$add$/openlane/designs/6th_project/src/debounce_sync.v:25$43.
+  creating $alu cell for $flatten\btn_debounce.$add$/openlane/designs/6th_project/src/debounce_sync.v:25$43: $auto$alumacc.cc:485:replace_alu$1274
+  creating $alu cell for $flatten\cpu.$add$/openlane/designs/6th_project/src/cpu_core.v:109$27: $auto$alumacc.cc:485:replace_alu$1277
+  creating $alu cell for $flatten\cpu.$add$/openlane/designs/6th_project/src/cpu_core.v:74$17: $auto$alumacc.cc:485:replace_alu$1280
+  creating $alu cell for $flatten\cpu.$add$/openlane/designs/6th_project/src/cpu_core.v:96$25: $auto$alumacc.cc:485:replace_alu$1283
+  creating $alu cell for $flatten\cpu.$add$/openlane/designs/6th_project/src/cpu_core.v:67$15: $auto$alumacc.cc:485:replace_alu$1286
+  creating $alu cell for $flatten\cpu.$sub$/openlane/designs/6th_project/src/cpu_core.v:81$19: $auto$alumacc.cc:485:replace_alu$1289
+  created 6 $alu and 0 $macc cells.
+
+37. Executing SHARE pass (SAT-based resource sharing).
+
+38. Executing OPT pass (performing simple optimizations).
+
+38.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+
+38.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cpu_top'.
+Removed a total of 0 cells.
+
+38.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cpu_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+38.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cpu_top.
+Performed a total of 0 changes.
+
+38.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cpu_top'.
+Removed a total of 0 cells.
+
+38.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+38.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+
+38.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+
+38.9. Finished OPT passes. (There is nothing left to do.)
+
+39. Executing MEMORY pass.
+
+39.1. Executing OPT_MEM pass (optimize memories).
+cpu_top.cpu.imem.memory: removing const-0 lane 6
+cpu_top.cpu.imem.memory: removing const-0 lane 7
+cpu_top.cpu.imem.memory: removing const-0 lane 8
+cpu_top.cpu.imem.memory: removing const-0 lane 9
+cpu_top.cpu.imem.memory: removing const-0 lane 10
+cpu_top.cpu.imem.memory: removing const-0 lane 11
+cpu_top.cpu.imem.memory: removing const-0 lane 15
+cpu_top.cpu.imem.memory: removing const-0 lane 20
+cpu_top.cpu.imem.memory: removing const-0 lane 25
+cpu_top.cpu.imem.memory: removing const-0 lane 26
+cpu_top.cpu.imem.memory: removing const-0 lane 30
+cpu_top.cpu.imem.memory: removing const-0 lane 31
+Performed a total of 1 transformations.
+
+39.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+39.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+39.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+39.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114'[0] in module `\cpu_top': no output FF found.
+Checking read port `$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114'[0] in module `\cpu_top': no output FF found.
+Checking read port `\cpu.imem.memory'[0] in module `\cpu_top': no output FF found.
+Checking read port address `$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114'[0] in module `\cpu_top': merged address FF to cell.
+Checking read port address `$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114'[0] in module `\cpu_top': merged address FF to cell.
+Checking read port address `\cpu.imem.memory'[0] in module `\cpu_top': address FF has async set and/or reset, not supported.
+
+39.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+
+39.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+39.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+39.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+
+39.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+40. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+
+41. Executing OPT pass (performing simple optimizations).
+
+41.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+<suppressed ~46 debug messages>
+
+41.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cpu_top'.
+Removed a total of 0 cells.
+
+41.3. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $auto$ff.cc:266:slice$1102 ($dffe) from module cpu_top (D = \cpu.instruction [16], Q = \cpu.write_reg [0], rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$1117 ($adffe) from module cpu_top (D = $flatten\cpu.$procmux$970_Y [1:0], Q = \cpu.pc [1:0]).
+
+41.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+Removed 7 unused cells and 41 unused wires.
+<suppressed ~8 debug messages>
+
+41.5. Rerunning OPT passes. (Removed registers in this run.)
+
+41.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+<suppressed ~2 debug messages>
+
+41.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cpu_top'.
+Removed a total of 0 cells.
+
+41.8. Executing OPT_DFF pass (perform DFF optimizations).
+
+41.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+
+41.10. Finished fast OPT passes.
+
+42. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory $flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114 in module \cpu_top:
+  created 16 $dff cells and 0 static cells of width 7.
+Extracted data FF from read port 0 of cpu_top.$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114: $$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdreg[0]
+  read interface: 1 $dff and 15 $mux cells.
+  write interface: 0 write mux blocks.
+Mapping memory $flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114 in module \cpu_top:
+  created 16 $dff cells and 0 static cells of width 7.
+Extracted data FF from read port 0 of cpu_top.$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114: $$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdreg[0]
+  read interface: 1 $dff and 15 $mux cells.
+  write interface: 0 write mux blocks.
+Mapping memory \cpu.imem.memory in module \cpu_top:
+  created 256 $dff cells and 0 static cells of width 20.
+  read interface: 0 $dff and 255 $mux cells.
+  write interface: 0 write mux blocks.
+
+43. Executing OPT pass (performing simple optimizations).
+
+43.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+<suppressed ~233 debug messages>
+
+43.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cpu_top'.
+Removed a total of 0 cells.
+
+43.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cpu_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/32 on $pmux $flatten\cpu.$procmux$132.
+    dead port 2/32 on $pmux $flatten\cpu.$procmux$132.
+    dead port 3/32 on $pmux $flatten\cpu.$procmux$132.
+    dead port 4/32 on $pmux $flatten\cpu.$procmux$132.
+    dead port 5/32 on $pmux $flatten\cpu.$procmux$132.
+    dead port 6/32 on $pmux $flatten\cpu.$procmux$132.
+    dead port 7/32 on $pmux $flatten\cpu.$procmux$132.
+    dead port 8/32 on $pmux $flatten\cpu.$procmux$132.
+    dead port 9/32 on $pmux $flatten\cpu.$procmux$132.
+    dead port 10/32 on $pmux $flatten\cpu.$procmux$132.
+    dead port 11/32 on $pmux $flatten\cpu.$procmux$132.
+    dead port 12/32 on $pmux $flatten\cpu.$procmux$132.
+    dead port 13/32 on $pmux $flatten\cpu.$procmux$132.
+    dead port 14/32 on $pmux $flatten\cpu.$procmux$132.
+    dead port 15/32 on $pmux $flatten\cpu.$procmux$132.
+    dead port 16/32 on $pmux $flatten\cpu.$procmux$132.
+    dead port 1/32 on $pmux $flatten\cpu.$procmux$165.
+    dead port 2/32 on $pmux $flatten\cpu.$procmux$165.
+    dead port 3/32 on $pmux $flatten\cpu.$procmux$165.
+    dead port 4/32 on $pmux $flatten\cpu.$procmux$165.
+    dead port 5/32 on $pmux $flatten\cpu.$procmux$165.
+    dead port 6/32 on $pmux $flatten\cpu.$procmux$165.
+    dead port 7/32 on $pmux $flatten\cpu.$procmux$165.
+    dead port 8/32 on $pmux $flatten\cpu.$procmux$165.
+    dead port 9/32 on $pmux $flatten\cpu.$procmux$165.
+    dead port 10/32 on $pmux $flatten\cpu.$procmux$165.
+    dead port 11/32 on $pmux $flatten\cpu.$procmux$165.
+    dead port 12/32 on $pmux $flatten\cpu.$procmux$165.
+    dead port 13/32 on $pmux $flatten\cpu.$procmux$165.
+    dead port 14/32 on $pmux $flatten\cpu.$procmux$165.
+    dead port 15/32 on $pmux $flatten\cpu.$procmux$165.
+    dead port 16/32 on $pmux $flatten\cpu.$procmux$165.
+    dead port 2/4 on $pmux $flatten\cpu.$procmux$945.
+Removed 33 multiplexer ports.
+<suppressed ~11 debug messages>
+
+43.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cpu_top.
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][7][6]$1803:
+      Old ports: A=20'01010000010000000111, B=20'10001100000000000001, Y=$memory\cpu.imem.memory$rdmux[0][6][3]$a$1603
+      New ports: A=2'01, B=2'10, Y={ $memory\cpu.imem.memory$rdmux[0][6][3]$a$1603 [14] $memory\cpu.imem.memory$rdmux[0][6][3]$a$1603 [1] }
+      New connections: { $memory\cpu.imem.memory$rdmux[0][6][3]$a$1603 [19:15] $memory\cpu.imem.memory$rdmux[0][6][3]$a$1603 [13:2] $memory\cpu.imem.memory$rdmux[0][6][3]$a$1603 [0] } = { $memory\cpu.imem.memory$rdmux[0][6][3]$a$1603 [14] $memory\cpu.imem.memory$rdmux[0][6][3]$a$1603 [1] 1'0 $memory\cpu.imem.memory$rdmux[0][6][3]$a$1603 [1] $memory\cpu.imem.memory$rdmux[0][6][3]$a$1603 [14] 3'000 $memory\cpu.imem.memory$rdmux[0][6][3]$a$1603 [1] 7'0000000 $memory\cpu.imem.memory$rdmux[0][6][3]$a$1603 [1] 1'1 }
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][7][5]$1800:
+      Old ports: A=20'10001000000000000100, B=20'00000000000100100000, Y=$memory\cpu.imem.memory$rdmux[0][6][2]$b$1601
+      New ports: A=2'01, B=2'10, Y={ $memory\cpu.imem.memory$rdmux[0][6][2]$b$1601 [5] $memory\cpu.imem.memory$rdmux[0][6][2]$b$1601 [2] }
+      New connections: { $memory\cpu.imem.memory$rdmux[0][6][2]$b$1601 [19:6] $memory\cpu.imem.memory$rdmux[0][6][2]$b$1601 [4:3] $memory\cpu.imem.memory$rdmux[0][6][2]$b$1601 [1:0] } = { $memory\cpu.imem.memory$rdmux[0][6][2]$b$1601 [2] 3'000 $memory\cpu.imem.memory$rdmux[0][6][2]$b$1601 [2] 6'000000 $memory\cpu.imem.memory$rdmux[0][6][2]$b$1601 [5] 6'000000 }
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][7][9]$1812:
+      Old ports: A=20'10001010101000000001, B=20'00100000000000001110, Y=$memory\cpu.imem.memory$rdmux[0][6][4]$b$1607
+      New ports: A=2'01, B=2'10, Y=$memory\cpu.imem.memory$rdmux[0][6][4]$b$1607 [1:0]
+      New connections: $memory\cpu.imem.memory$rdmux[0][6][4]$b$1607 [19:2] = { $memory\cpu.imem.memory$rdmux[0][6][4]$b$1607 [0] 1'0 $memory\cpu.imem.memory$rdmux[0][6][4]$b$1607 [1] 1'0 $memory\cpu.imem.memory$rdmux[0][6][4]$b$1607 [0] 1'0 $memory\cpu.imem.memory$rdmux[0][6][4]$b$1607 [0] 1'0 $memory\cpu.imem.memory$rdmux[0][6][4]$b$1607 [0] 1'0 $memory\cpu.imem.memory$rdmux[0][6][4]$b$1607 [0] 5'00000 $memory\cpu.imem.memory$rdmux[0][6][4]$b$1607 [1] $memory\cpu.imem.memory$rdmux[0][6][4]$b$1607 [1] }
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][7][2]$1791:
+      Old ports: A=20'10001000000000000010, B=20'00100000000000001010, Y=$memory\cpu.imem.memory$rdmux[0][6][1]$a$1597
+      New ports: A=2'10, B=2'01, Y={ $memory\cpu.imem.memory$rdmux[0][6][1]$a$1597 [15] $memory\cpu.imem.memory$rdmux[0][6][1]$a$1597 [3] }
+      New connections: { $memory\cpu.imem.memory$rdmux[0][6][1]$a$1597 [19:16] $memory\cpu.imem.memory$rdmux[0][6][1]$a$1597 [14:4] $memory\cpu.imem.memory$rdmux[0][6][1]$a$1597 [2:0] } = { $memory\cpu.imem.memory$rdmux[0][6][1]$a$1597 [15] 1'0 $memory\cpu.imem.memory$rdmux[0][6][1]$a$1597 [3] 15'000000000000010 }
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][7][7]$1806:
+      Old ports: A=20'10001110000000000001, B=20'00001100111011100000, Y=$memory\cpu.imem.memory$rdmux[0][6][3]$b$1604
+      New ports: A=2'01, B=2'10, Y={ $memory\cpu.imem.memory$rdmux[0][6][3]$b$1604 [5] $memory\cpu.imem.memory$rdmux[0][6][3]$b$1604 [0] }
+      New connections: { $memory\cpu.imem.memory$rdmux[0][6][3]$b$1604 [19:6] $memory\cpu.imem.memory$rdmux[0][6][3]$b$1604 [4:1] } = { $memory\cpu.imem.memory$rdmux[0][6][3]$b$1604 [0] 5'00011 $memory\cpu.imem.memory$rdmux[0][6][3]$b$1604 [0] 1'0 $memory\cpu.imem.memory$rdmux[0][6][3]$b$1604 [5] $memory\cpu.imem.memory$rdmux[0][6][3]$b$1604 [5] $memory\cpu.imem.memory$rdmux[0][6][3]$b$1604 [5] 1'0 $memory\cpu.imem.memory$rdmux[0][6][3]$b$1604 [5] $memory\cpu.imem.memory$rdmux[0][6][3]$b$1604 [5] 4'0000 }
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][7][1]$1788:
+      Old ports: A=20'00000100001100100000, B=20'10010000000000000101, Y=$memory\cpu.imem.memory$rdmux[0][6][0]$b$1595
+      New ports: A=2'10, B=2'01, Y={ $memory\cpu.imem.memory$rdmux[0][6][0]$b$1595 [5] $memory\cpu.imem.memory$rdmux[0][6][0]$b$1595 [0] }
+      New connections: { $memory\cpu.imem.memory$rdmux[0][6][0]$b$1595 [19:6] $memory\cpu.imem.memory$rdmux[0][6][0]$b$1595 [4:1] } = { $memory\cpu.imem.memory$rdmux[0][6][0]$b$1595 [0] 2'00 $memory\cpu.imem.memory$rdmux[0][6][0]$b$1595 [0] 1'0 $memory\cpu.imem.memory$rdmux[0][6][0]$b$1595 [5] 4'0000 $memory\cpu.imem.memory$rdmux[0][6][0]$b$1595 [5] $memory\cpu.imem.memory$rdmux[0][6][0]$b$1595 [5] 4'0000 $memory\cpu.imem.memory$rdmux[0][6][0]$b$1595 [0] 1'0 }
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][7][0]$1785:
+      Old ports: A=20'10001000000000010000, B=20'10000010000000010101, Y=$memory\cpu.imem.memory$rdmux[0][6][0]$a$1594
+      New ports: A=2'10, B=2'01, Y={ $memory\cpu.imem.memory$rdmux[0][6][0]$a$1594 [15] $memory\cpu.imem.memory$rdmux[0][6][0]$a$1594 [0] }
+      New connections: { $memory\cpu.imem.memory$rdmux[0][6][0]$a$1594 [19:16] $memory\cpu.imem.memory$rdmux[0][6][0]$a$1594 [14:1] } = { 5'10000 $memory\cpu.imem.memory$rdmux[0][6][0]$a$1594 [0] 10'0000000010 $memory\cpu.imem.memory$rdmux[0][6][0]$a$1594 [0] 1'0 }
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][3][6]$1398:
+      Old ports: A=7'1000110, B=7'0100001, Y=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$a$1378
+      New ports: A=2'10, B=2'01, Y=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$a$1378 [1:0]
+      New connections: $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$a$1378 [6:2] = { $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$a$1378 [1:0] 2'00 $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$a$1378 [1] }
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][3][5]$1395:
+      Old ports: A=7'0001000, B=7'0000011, Y=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$b$1376
+      New ports: A=2'10, B=2'01, Y={ $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$b$1376 [3] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$b$1376 [0] }
+      New connections: { $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$b$1376 [6:4] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$b$1376 [2:1] } = { 4'0000 $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$b$1376 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][3][4]$1392:
+      Old ports: A=7'0000000, B=7'0010000, Y=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$a$1375
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$a$1375 [4]
+      New connections: { $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$a$1375 [6:5] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$a$1375 [3:0] } = 6'000000
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][3][3]$1389:
+      Old ports: A=7'0000010, B=7'1111000, Y=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1373
+      New ports: A=2'01, B=2'10, Y={ $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1373 [3] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1373 [1] }
+      New connections: { $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1373 [6:4] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1373 [2] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1373 [0] } = { $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1373 [3] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1373 [3] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1373 [3] 2'00 }
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][3][2]$1386:
+      Old ports: A=7'0011001, B=7'0010010, Y=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$a$1372
+      New ports: A=2'01, B=2'10, Y=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$a$1372 [1:0]
+      New connections: $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$a$1372 [6:2] = { 3'001 $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$a$1372 [0] 1'0 }
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][3][1]$1383:
+      Old ports: A=7'0100100, B=7'0110000, Y=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$b$1370
+      New ports: A=2'01, B=2'10, Y={ $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$b$1370 [4] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$b$1370 [2] }
+      New connections: { $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$b$1370 [6:5] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$b$1370 [3] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$b$1370 [1:0] } = 5'01000
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][3][0]$1380:
+      Old ports: A=7'1000000, B=7'1111001, Y=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$a$1369
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$a$1369 [0]
+      New connections: $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$a$1369 [6:1] = { 1'1 $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$a$1369 [0] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$a$1369 [0] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$a$1369 [0] 2'00 }
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][3][6]$1353:
+      Old ports: A=7'1000110, B=7'0100001, Y=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$a$1333
+      New ports: A=2'10, B=2'01, Y=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$a$1333 [1:0]
+      New connections: $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$a$1333 [6:2] = { $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$a$1333 [1:0] 2'00 $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$a$1333 [1] }
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][3][5]$1350:
+      Old ports: A=7'0001000, B=7'0000011, Y=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$b$1331
+      New ports: A=2'10, B=2'01, Y={ $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$b$1331 [3] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$b$1331 [0] }
+      New connections: { $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$b$1331 [6:4] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$b$1331 [2:1] } = { 4'0000 $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$b$1331 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][3][4]$1347:
+      Old ports: A=7'0000000, B=7'0010000, Y=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$a$1330
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$a$1330 [4]
+      New connections: { $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$a$1330 [6:5] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$a$1330 [3:0] } = 6'000000
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][3][3]$1344:
+      Old ports: A=7'0000010, B=7'1111000, Y=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1328
+      New ports: A=2'01, B=2'10, Y={ $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1328 [3] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1328 [1] }
+      New connections: { $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1328 [6:4] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1328 [2] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1328 [0] } = { $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1328 [3] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1328 [3] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1328 [3] 2'00 }
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][3][2]$1341:
+      Old ports: A=7'0011001, B=7'0010010, Y=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$a$1327
+      New ports: A=2'01, B=2'10, Y=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$a$1327 [1:0]
+      New connections: $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$a$1327 [6:2] = { 3'001 $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$a$1327 [0] 1'0 }
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][3][1]$1338:
+      Old ports: A=7'0100100, B=7'0110000, Y=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$b$1325
+      New ports: A=2'01, B=2'10, Y={ $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$b$1325 [4] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$b$1325 [2] }
+      New connections: { $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$b$1325 [6:5] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$b$1325 [3] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$b$1325 [1:0] } = 5'01000
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][3][0]$1335:
+      Old ports: A=7'1000000, B=7'1111001, Y=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$a$1324
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$a$1324 [0]
+      New connections: $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$a$1324 [6:1] = { 1'1 $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$a$1324 [0] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$a$1324 [0] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$a$1324 [0] 2'00 }
+    Consolidated identical input bits for $mux cell $flatten\cpu.$procmux$935:
+      Old ports: A={ 1'0 \cpu.instruction [19:16] }, B={ 1'0 \cpu.instruction [14:12] 1'0 }, Y=$flatten\cpu.$procmux$935_Y
+      New ports: A=\cpu.instruction [19:16], B={ \cpu.instruction [14:12] 1'0 }, Y=$flatten\cpu.$procmux$935_Y [3:0]
+      New connections: $flatten\cpu.$procmux$935_Y [4] = 1'0
+    Consolidated identical input bits for $mux cell $flatten\cpu.$procmux$968:
+      Old ports: A={ $flatten\cpu.$add$/openlane/designs/6th_project/src/cpu_core.v:109$27_Y [31:2] 2'x }, B={ $flatten\cpu.$add$/openlane/designs/6th_project/src/cpu_core.v:96$25_Y [31:2] 2'x }, Y=$flatten\cpu.$procmux$968_Y
+      New ports: A=$flatten\cpu.$add$/openlane/designs/6th_project/src/cpu_core.v:109$27_Y [31:2], B=$flatten\cpu.$add$/openlane/designs/6th_project/src/cpu_core.v:96$25_Y [31:2], Y=$flatten\cpu.$procmux$968_Y [31:2]
+      New connections: $flatten\cpu.$procmux$968_Y [1:0] = 2'x
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][3][7]$1356:
+      Old ports: A=7'0000110, B=7'0001110, Y=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$b$1334
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$b$1334 [3]
+      New connections: { $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$b$1334 [6:4] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$b$1334 [2:0] } = 6'000110
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][3][7]$1401:
+      Old ports: A=7'0000110, B=7'0001110, Y=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$b$1379
+      New ports: A=1'0, B=1'1, Y=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$b$1379 [3]
+      New connections: { $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$b$1379 [6:4] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$b$1379 [2:0] } = 6'000110
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][7][8]$1809:
+      Old ports: A=20'00001110000100100000, B=20'00001111000100100000, Y=$memory\cpu.imem.memory$rdmux[0][6][4]$a$1606
+      New ports: A=1'0, B=1'1, Y=$memory\cpu.imem.memory$rdmux[0][6][4]$a$1606 [12]
+      New connections: { $memory\cpu.imem.memory$rdmux[0][6][4]$a$1606 [19:13] $memory\cpu.imem.memory$rdmux[0][6][4]$a$1606 [11:0] } = 19'0000111000100100000
+  Optimizing cells in module \cpu_top.
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][6][4]$1605:
+      Old ports: A=$memory\cpu.imem.memory$rdmux[0][6][4]$a$1606, B=$memory\cpu.imem.memory$rdmux[0][6][4]$b$1607, Y=$memory\cpu.imem.memory$rdmux[0][5][2]$a$1504
+      New ports: A={ 1'1 $memory\cpu.imem.memory$rdmux[0][6][4]$a$1606 [12] 3'100 }, B={ $memory\cpu.imem.memory$rdmux[0][6][4]$b$1607 [0] 2'00 $memory\cpu.imem.memory$rdmux[0][6][4]$b$1607 [1:0] }, Y={ $memory\cpu.imem.memory$rdmux[0][5][2]$a$1504 [13:12] $memory\cpu.imem.memory$rdmux[0][5][2]$a$1504 [5] $memory\cpu.imem.memory$rdmux[0][5][2]$a$1504 [1:0] }
+      New connections: { $memory\cpu.imem.memory$rdmux[0][5][2]$a$1504 [19:14] $memory\cpu.imem.memory$rdmux[0][5][2]$a$1504 [11:6] $memory\cpu.imem.memory$rdmux[0][5][2]$a$1504 [4:2] } = { $memory\cpu.imem.memory$rdmux[0][5][2]$a$1504 [0] 1'0 $memory\cpu.imem.memory$rdmux[0][5][2]$a$1504 [1] 1'0 $memory\cpu.imem.memory$rdmux[0][5][2]$a$1504 [13] $memory\cpu.imem.memory$rdmux[0][5][2]$a$1504 [5] $memory\cpu.imem.memory$rdmux[0][5][2]$a$1504 [0] 1'0 $memory\cpu.imem.memory$rdmux[0][5][2]$a$1504 [0] $memory\cpu.imem.memory$rdmux[0][5][2]$a$1504 [5] 3'000 $memory\cpu.imem.memory$rdmux[0][5][2]$a$1504 [1] $memory\cpu.imem.memory$rdmux[0][5][2]$a$1504 [1] }
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][6][2]$1599:
+      Old ports: A=20'00000000000000000000, B=$memory\cpu.imem.memory$rdmux[0][6][2]$b$1601, Y=$memory\cpu.imem.memory$rdmux[0][5][1]$a$1501
+      New ports: A=2'00, B={ $memory\cpu.imem.memory$rdmux[0][6][2]$b$1601 [5] $memory\cpu.imem.memory$rdmux[0][6][2]$b$1601 [2] }, Y={ $memory\cpu.imem.memory$rdmux[0][5][1]$a$1501 [5] $memory\cpu.imem.memory$rdmux[0][5][1]$a$1501 [2] }
+      New connections: { $memory\cpu.imem.memory$rdmux[0][5][1]$a$1501 [19:6] $memory\cpu.imem.memory$rdmux[0][5][1]$a$1501 [4:3] $memory\cpu.imem.memory$rdmux[0][5][1]$a$1501 [1:0] } = { $memory\cpu.imem.memory$rdmux[0][5][1]$a$1501 [2] 3'000 $memory\cpu.imem.memory$rdmux[0][5][1]$a$1501 [2] 6'000000 $memory\cpu.imem.memory$rdmux[0][5][1]$a$1501 [5] 6'000000 }
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][6][1]$1596:
+      Old ports: A=$memory\cpu.imem.memory$rdmux[0][6][1]$a$1597, B=20'00000000000000000000, Y=$memory\cpu.imem.memory$rdmux[0][5][0]$b$1499
+      New ports: A={ $memory\cpu.imem.memory$rdmux[0][6][1]$a$1597 [15] $memory\cpu.imem.memory$rdmux[0][6][1]$a$1597 [3] 1'1 }, B=3'000, Y={ $memory\cpu.imem.memory$rdmux[0][5][0]$b$1499 [15] $memory\cpu.imem.memory$rdmux[0][5][0]$b$1499 [3] $memory\cpu.imem.memory$rdmux[0][5][0]$b$1499 [1] }
+      New connections: { $memory\cpu.imem.memory$rdmux[0][5][0]$b$1499 [19:16] $memory\cpu.imem.memory$rdmux[0][5][0]$b$1499 [14:4] $memory\cpu.imem.memory$rdmux[0][5][0]$b$1499 [2] $memory\cpu.imem.memory$rdmux[0][5][0]$b$1499 [0] } = { $memory\cpu.imem.memory$rdmux[0][5][0]$b$1499 [15] 1'0 $memory\cpu.imem.memory$rdmux[0][5][0]$b$1499 [3] 14'00000000000000 }
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][6][3]$1602:
+      Old ports: A=$memory\cpu.imem.memory$rdmux[0][6][3]$a$1603, B=$memory\cpu.imem.memory$rdmux[0][6][3]$b$1604, Y=$memory\cpu.imem.memory$rdmux[0][5][1]$b$1502
+      New ports: A={ $memory\cpu.imem.memory$rdmux[0][6][3]$a$1603 [14] $memory\cpu.imem.memory$rdmux[0][6][3]$a$1603 [14] 1'0 $memory\cpu.imem.memory$rdmux[0][6][3]$a$1603 [1] 1'0 $memory\cpu.imem.memory$rdmux[0][6][3]$a$1603 [1] 1'1 }, B={ $memory\cpu.imem.memory$rdmux[0][6][3]$b$1604 [0] 1'1 $memory\cpu.imem.memory$rdmux[0][6][3]$b$1604 [0] $memory\cpu.imem.memory$rdmux[0][6][3]$b$1604 [5] $memory\cpu.imem.memory$rdmux[0][6][3]$b$1604 [5] 1'0 $memory\cpu.imem.memory$rdmux[0][6][3]$b$1604 [0] }, Y={ $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [19] $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [14:13] $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [10] $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [5] $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [1:0] }
+      New connections: { $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [18:15] $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [12:11] $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [9:6] $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [4:2] } = { $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [1] 1'0 $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [1] $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [14] 1'0 $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [5] $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [5] 1'0 $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [5] $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [5] 2'00 $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [1] }
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][6][0]$1593:
+      Old ports: A=$memory\cpu.imem.memory$rdmux[0][6][0]$a$1594, B=$memory\cpu.imem.memory$rdmux[0][6][0]$b$1595, Y=$memory\cpu.imem.memory$rdmux[0][5][0]$a$1498
+      New ports: A={ 2'10 $memory\cpu.imem.memory$rdmux[0][6][0]$a$1594 [15] $memory\cpu.imem.memory$rdmux[0][6][0]$a$1594 [0] 2'01 $memory\cpu.imem.memory$rdmux[0][6][0]$a$1594 [0] }, B={ $memory\cpu.imem.memory$rdmux[0][6][0]$b$1595 [0] $memory\cpu.imem.memory$rdmux[0][6][0]$b$1595 [0] 2'00 $memory\cpu.imem.memory$rdmux[0][6][0]$b$1595 [5] 1'0 $memory\cpu.imem.memory$rdmux[0][6][0]$b$1595 [0] }, Y={ $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [19] $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [16:15] $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [13] $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [5:4] $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [0] }
+      New connections: { $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [18:17] $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [14] $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [12:6] $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [3:1] } = { 2'00 $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [5] 3'000 $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [5] $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [5] 3'000 $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [0] 1'0 }
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$1377:
+      Old ports: A=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$a$1378, B=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$b$1379, Y=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$b$1367
+      New ports: A={ $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$a$1378 [1] 1'0 $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$a$1378 [1:0] }, B={ 1'0 $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$b$1379 [3] 2'10 }, Y={ $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$b$1367 [6] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$b$1367 [3] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$b$1367 [1:0] }
+      New connections: { $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$b$1367 [5:4] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$b$1367 [2] } = { $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$b$1367 [0] 1'0 $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$b$1367 [1] }
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$1374:
+      Old ports: A=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$a$1375, B=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$b$1376, Y=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$a$1366
+      New ports: A={ $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$a$1375 [4] 2'00 }, B={ 1'0 $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$b$1376 [3] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$b$1376 [0] }, Y={ $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$a$1366 [4:3] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$a$1366 [0] }
+      New connections: { $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$a$1366 [6:5] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$a$1366 [2:1] } = { 3'000 $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$a$1366 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$1371:
+      Old ports: A=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$a$1372, B=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1373, Y=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$b$1364
+      New ports: A={ 2'01 $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$a$1372 [0] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$a$1372 [1:0] }, B={ $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1373 [3] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1373 [3] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1373 [3] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1373 [1] 1'0 }, Y={ $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$b$1364 [5:3] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$b$1364 [1:0] }
+      New connections: { $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$b$1364 [6] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$b$1364 [2] } = { $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$b$1364 [5] 1'0 }
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$1368:
+      Old ports: A=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$a$1369, B=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$b$1370, Y=$memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$a$1363
+      New ports: A={ 1'1 $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$a$1369 [0] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$a$1369 [0] 1'0 $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$a$1369 [0] }, B={ 2'01 $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$b$1370 [4] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$b$1370 [2] 1'0 }, Y={ $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$a$1363 [6:4] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$a$1363 [2] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$a$1363 [0] }
+      New connections: { $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$a$1363 [3] $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$a$1363 [1] } = { $memory$flatten\display.\dec2.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$a$1363 [0] 1'0 }
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$1332:
+      Old ports: A=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$a$1333, B=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$b$1334, Y=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$b$1322
+      New ports: A={ $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$a$1333 [1] 1'0 $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$a$1333 [1:0] }, B={ 1'0 $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][3]$b$1334 [3] 2'10 }, Y={ $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$b$1322 [6] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$b$1322 [3] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$b$1322 [1:0] }
+      New connections: { $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$b$1322 [5:4] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$b$1322 [2] } = { $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$b$1322 [0] 1'0 $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$b$1322 [1] }
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$1329:
+      Old ports: A=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$a$1330, B=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$b$1331, Y=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$a$1321
+      New ports: A={ $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$a$1330 [4] 2'00 }, B={ 1'0 $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$b$1331 [3] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][2]$b$1331 [0] }, Y={ $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$a$1321 [4:3] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$a$1321 [0] }
+      New connections: { $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$a$1321 [6:5] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$a$1321 [2:1] } = { 3'000 $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][1]$a$1321 [0] }
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$1326:
+      Old ports: A=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$a$1327, B=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1328, Y=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$b$1319
+      New ports: A={ 2'01 $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$a$1327 [0] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$a$1327 [1:0] }, B={ $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1328 [3] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1328 [3] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1328 [3] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][1]$b$1328 [1] 1'0 }, Y={ $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$b$1319 [5:3] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$b$1319 [1:0] }
+      New connections: { $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$b$1319 [6] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$b$1319 [2] } = { $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$b$1319 [5] 1'0 }
+    Consolidated identical input bits for $mux cell $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$1323:
+      Old ports: A=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$a$1324, B=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$b$1325, Y=$memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$a$1318
+      New ports: A={ 1'1 $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$a$1324 [0] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$a$1324 [0] 1'0 $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$a$1324 [0] }, B={ 2'01 $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$b$1325 [4] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][2][0]$b$1325 [2] 1'0 }, Y={ $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$a$1318 [6:4] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$a$1318 [2] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$a$1318 [0] }
+      New connections: { $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$a$1318 [3] $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$a$1318 [1] } = { $memory$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdmux[0][1][0]$a$1318 [0] 1'0 }
+    Consolidated identical input bits for $mux cell $flatten\cpu.$procmux$970:
+      Old ports: A={ $flatten\cpu.$add$/openlane/designs/6th_project/src/cpu_core.v:109$27_Y [31:2] 2'x }, B=$flatten\cpu.$procmux$968_Y, Y=$flatten\cpu.$procmux$970_Y
+      New ports: A=$flatten\cpu.$add$/openlane/designs/6th_project/src/cpu_core.v:109$27_Y [31:2], B=$flatten\cpu.$procmux$968_Y [31:2], Y=$flatten\cpu.$procmux$970_Y [31:2]
+      New connections: $flatten\cpu.$procmux$970_Y [1:0] = 2'x
+  Optimizing cells in module \cpu_top.
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][5][0]$1497:
+      Old ports: A=$memory\cpu.imem.memory$rdmux[0][5][0]$a$1498, B=$memory\cpu.imem.memory$rdmux[0][5][0]$b$1499, Y=$memory\cpu.imem.memory$rdmux[0][4][0]$a$1450
+      New ports: A={ $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [19] $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [16:15] $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [13] $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [5:4] 2'00 $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [0] }, B={ $memory\cpu.imem.memory$rdmux[0][5][0]$b$1499 [15] 1'0 $memory\cpu.imem.memory$rdmux[0][5][0]$b$1499 [15] 3'000 $memory\cpu.imem.memory$rdmux[0][5][0]$b$1499 [3] $memory\cpu.imem.memory$rdmux[0][5][0]$b$1499 [1] 1'0 }, Y={ $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [19] $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [16:15] $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [13] $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [5:3] $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [1:0] }
+      New connections: { $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [18:17] $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [14] $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [12:6] $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [2] } = { 1'0 $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [3] $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [5] 3'000 $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [5] $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [5] 2'00 $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [0] }
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][5][2]$1503:
+      Old ports: A=$memory\cpu.imem.memory$rdmux[0][5][2]$a$1504, B=20'x, Y=$memory\cpu.imem.memory$rdmux[0][4][1]$a$1453
+      New ports: A={ $memory\cpu.imem.memory$rdmux[0][5][2]$a$1504 [13:12] $memory\cpu.imem.memory$rdmux[0][5][2]$a$1504 [5] 1'0 $memory\cpu.imem.memory$rdmux[0][5][2]$a$1504 [1:0] }, B=6'x, Y={ $memory\cpu.imem.memory$rdmux[0][4][1]$a$1453 [13:12] $memory\cpu.imem.memory$rdmux[0][4][1]$a$1453 [5:4] $memory\cpu.imem.memory$rdmux[0][4][1]$a$1453 [1:0] }
+      New connections: { $memory\cpu.imem.memory$rdmux[0][4][1]$a$1453 [19:14] $memory\cpu.imem.memory$rdmux[0][4][1]$a$1453 [11:6] $memory\cpu.imem.memory$rdmux[0][4][1]$a$1453 [3:2] } = { $memory\cpu.imem.memory$rdmux[0][4][1]$a$1453 [0] $memory\cpu.imem.memory$rdmux[0][4][1]$a$1453 [4] $memory\cpu.imem.memory$rdmux[0][4][1]$a$1453 [1] $memory\cpu.imem.memory$rdmux[0][4][1]$a$1453 [4] $memory\cpu.imem.memory$rdmux[0][4][1]$a$1453 [13] $memory\cpu.imem.memory$rdmux[0][4][1]$a$1453 [5] $memory\cpu.imem.memory$rdmux[0][4][1]$a$1453 [0] $memory\cpu.imem.memory$rdmux[0][4][1]$a$1453 [4] $memory\cpu.imem.memory$rdmux[0][4][1]$a$1453 [0] $memory\cpu.imem.memory$rdmux[0][4][1]$a$1453 [5:4] $memory\cpu.imem.memory$rdmux[0][4][1]$a$1453 [4] $memory\cpu.imem.memory$rdmux[0][4][1]$a$1453 [1] $memory\cpu.imem.memory$rdmux[0][4][1]$a$1453 [1] }
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][5][1]$1500:
+      Old ports: A=$memory\cpu.imem.memory$rdmux[0][5][1]$a$1501, B=$memory\cpu.imem.memory$rdmux[0][5][1]$b$1502, Y=$memory\cpu.imem.memory$rdmux[0][4][0]$b$1451
+      New ports: A={ $memory\cpu.imem.memory$rdmux[0][5][1]$a$1501 [2] $memory\cpu.imem.memory$rdmux[0][5][1]$a$1501 [2] 3'000 $memory\cpu.imem.memory$rdmux[0][5][1]$a$1501 [5] 1'0 $memory\cpu.imem.memory$rdmux[0][5][1]$a$1501 [5] $memory\cpu.imem.memory$rdmux[0][5][1]$a$1501 [2] 2'00 }, B={ $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [19] $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [14] $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [14:13] $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [10] 1'0 $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [5] $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [5] $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [1] $memory\cpu.imem.memory$rdmux[0][5][1]$b$1502 [1:0] }, Y={ $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [19] $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [15:13] $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [10] $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [8] $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [6:5] $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [2:0] }
+      New connections: { $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [18:16] $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [12:11] $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [9] $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [7] $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [4:3] } = { $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [1] 1'0 $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [1] 1'0 $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [6] $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [6] $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [6] 2'00 }
+  Optimizing cells in module \cpu_top.
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][4][1]$1452:
+      Old ports: A=$memory\cpu.imem.memory$rdmux[0][4][1]$a$1453, B=20'x, Y=$memory\cpu.imem.memory$rdmux[0][3][0]$b$1427
+      New ports: A={ $memory\cpu.imem.memory$rdmux[0][4][1]$a$1453 [13:12] $memory\cpu.imem.memory$rdmux[0][4][1]$a$1453 [5:4] $memory\cpu.imem.memory$rdmux[0][4][1]$a$1453 [1:0] }, B=6'x, Y={ $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [13:12] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [5:4] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [1:0] }
+      New connections: { $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [19:14] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [11:6] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [3:2] } = { $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [0] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [4] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [1] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [4] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [13] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [5] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [0] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [4] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [0] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [5:4] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [4] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [1] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [1] }
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][4][0]$1449:
+      Old ports: A=$memory\cpu.imem.memory$rdmux[0][4][0]$a$1450, B=$memory\cpu.imem.memory$rdmux[0][4][0]$b$1451, Y=$memory\cpu.imem.memory$rdmux[0][3][0]$a$1426
+      New ports: A={ $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [19] 1'0 $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [16:15] $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [5] $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [13] 1'0 $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [5] $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [5] 1'0 $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [5:3] $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [0] $memory\cpu.imem.memory$rdmux[0][4][0]$a$1450 [1:0] }, B={ $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [19] $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [1] $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [1] $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [15:13] $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [10] $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [6] $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [8] $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [6:5] 2'00 $memory\cpu.imem.memory$rdmux[0][4][0]$b$1451 [2:0] }, Y={ $memory\cpu.imem.memory$rdmux[0][3][0]$a$1426 [19:18] $memory\cpu.imem.memory$rdmux[0][3][0]$a$1426 [16:13] $memory\cpu.imem.memory$rdmux[0][3][0]$a$1426 [10:8] $memory\cpu.imem.memory$rdmux[0][3][0]$a$1426 [6:0] }
+      New connections: { $memory\cpu.imem.memory$rdmux[0][3][0]$a$1426 [17] $memory\cpu.imem.memory$rdmux[0][3][0]$a$1426 [12:11] $memory\cpu.imem.memory$rdmux[0][3][0]$a$1426 [7] } = { $memory\cpu.imem.memory$rdmux[0][3][0]$a$1426 [3] 1'0 $memory\cpu.imem.memory$rdmux[0][3][0]$a$1426 [6] $memory\cpu.imem.memory$rdmux[0][3][0]$a$1426 [6] }
+  Optimizing cells in module \cpu_top.
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][3][0]$1425:
+      Old ports: A=$memory\cpu.imem.memory$rdmux[0][3][0]$a$1426, B=$memory\cpu.imem.memory$rdmux[0][3][0]$b$1427, Y=$memory\cpu.imem.memory$rdmux[0][2][0]$a$1414
+      New ports: A={ $memory\cpu.imem.memory$rdmux[0][3][0]$a$1426 [19:18] $memory\cpu.imem.memory$rdmux[0][3][0]$a$1426 [16:13] 1'0 $memory\cpu.imem.memory$rdmux[0][3][0]$a$1426 [6] $memory\cpu.imem.memory$rdmux[0][3][0]$a$1426 [10:8] $memory\cpu.imem.memory$rdmux[0][3][0]$a$1426 [6:0] }, B={ $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [0] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [4] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [4] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [13] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [5] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [13:12] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [0] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [4] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [0] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [5:4] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [5:4] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [1] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [1] $memory\cpu.imem.memory$rdmux[0][3][0]$b$1427 [1:0] }, Y={ $memory\cpu.imem.memory$rdmux[0][2][0]$a$1414 [19:18] $memory\cpu.imem.memory$rdmux[0][2][0]$a$1414 [16:8] $memory\cpu.imem.memory$rdmux[0][2][0]$a$1414 [6:0] }
+      New connections: { $memory\cpu.imem.memory$rdmux[0][2][0]$a$1414 [17] $memory\cpu.imem.memory$rdmux[0][2][0]$a$1414 [7] } = { $memory\cpu.imem.memory$rdmux[0][2][0]$a$1414 [3] $memory\cpu.imem.memory$rdmux[0][2][0]$a$1414 [6] }
+  Optimizing cells in module \cpu_top.
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][2][0]$1413:
+      Old ports: A=$memory\cpu.imem.memory$rdmux[0][2][0]$a$1414, B=20'x, Y=$memory\cpu.imem.memory$rdmux[0][1][0]$a$1408
+      New ports: A={ $memory\cpu.imem.memory$rdmux[0][2][0]$a$1414 [19:18] $memory\cpu.imem.memory$rdmux[0][2][0]$a$1414 [16:8] $memory\cpu.imem.memory$rdmux[0][2][0]$a$1414 [6:0] }, B=18'x, Y={ $memory\cpu.imem.memory$rdmux[0][1][0]$a$1408 [19:18] $memory\cpu.imem.memory$rdmux[0][1][0]$a$1408 [16:8] $memory\cpu.imem.memory$rdmux[0][1][0]$a$1408 [6:0] }
+      New connections: { $memory\cpu.imem.memory$rdmux[0][1][0]$a$1408 [17] $memory\cpu.imem.memory$rdmux[0][1][0]$a$1408 [7] } = { $memory\cpu.imem.memory$rdmux[0][1][0]$a$1408 [3] $memory\cpu.imem.memory$rdmux[0][1][0]$a$1408 [6] }
+  Optimizing cells in module \cpu_top.
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][1][0]$1407:
+      Old ports: A=$memory\cpu.imem.memory$rdmux[0][1][0]$a$1408, B=20'x, Y=$memory\cpu.imem.memory$rdmux[0][0][0]$a$1405
+      New ports: A={ $memory\cpu.imem.memory$rdmux[0][1][0]$a$1408 [19:18] $memory\cpu.imem.memory$rdmux[0][1][0]$a$1408 [16:8] $memory\cpu.imem.memory$rdmux[0][1][0]$a$1408 [6:0] }, B=18'x, Y={ $memory\cpu.imem.memory$rdmux[0][0][0]$a$1405 [19:18] $memory\cpu.imem.memory$rdmux[0][0][0]$a$1405 [16:8] $memory\cpu.imem.memory$rdmux[0][0][0]$a$1405 [6:0] }
+      New connections: { $memory\cpu.imem.memory$rdmux[0][0][0]$a$1405 [17] $memory\cpu.imem.memory$rdmux[0][0][0]$a$1405 [7] } = { $memory\cpu.imem.memory$rdmux[0][0][0]$a$1405 [3] $memory\cpu.imem.memory$rdmux[0][0][0]$a$1405 [6] }
+  Optimizing cells in module \cpu_top.
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][0][0]$1404:
+      Old ports: A=$memory\cpu.imem.memory$rdmux[0][0][0]$a$1405, B=20'x, Y={ \cpu.imem.instruction [29:27] \cpu.imem.instruction [24:21] \cpu.instruction [19:16] \cpu.instruction [14:12] \cpu.imem.instruction [5:0] }
+      New ports: A={ $memory\cpu.imem.memory$rdmux[0][0][0]$a$1405 [19:18] $memory\cpu.imem.memory$rdmux[0][0][0]$a$1405 [16:8] $memory\cpu.imem.memory$rdmux[0][0][0]$a$1405 [6:0] }, B=18'x, Y={ \cpu.imem.instruction [29:28] \cpu.imem.instruction [24:21] \cpu.instruction [19:16] \cpu.instruction [14] \cpu.instruction [12] \cpu.imem.instruction [5:0] }
+      New connections: { \cpu.imem.instruction [27] \cpu.instruction [13] } = { \cpu.imem.instruction [3] \cpu.instruction [12] }
+  Optimizing cells in module \cpu_top.
+Performed a total of 49 changes.
+
+43.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cpu_top'.
+<suppressed ~45 debug messages>
+Removed a total of 15 cells.
+
+43.6. Executing OPT_SHARE pass.
+    Found cells that share an operand and can be merged by moving the $pmux $flatten\cpu.$procmux$945 in front of them:
+        $auto$alumacc.cc:485:replace_alu$1280
+        $auto$alumacc.cc:485:replace_alu$1286
+
+43.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+43.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+Removed 46 unused cells and 590 unused wires.
+<suppressed ~62 debug messages>
+
+43.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+<suppressed ~8 debug messages>
+
+43.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+43.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cpu_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~18 debug messages>
+
+43.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cpu_top.
+    New ctrl vector for $pmux cell $flatten\cpu.$procmux$945: $flatten\cpu.$procmux$936_CMP
+    Consolidated identical input bits for $mux cell $memory\cpu.imem.memory$rdmux[0][6][0]$1593:
+      Old ports: A={ 2'10 $memory\cpu.imem.memory$rdmux[0][6][0]$a$1594 [15] $memory\cpu.imem.memory$rdmux[0][6][0]$a$1594 [13] 2'01 $memory\cpu.imem.memory$rdmux[0][6][0]$a$1594 [13] }, B={ $memory\cpu.imem.memory$rdmux[0][6][0]$a$1594 [13] $memory\cpu.imem.memory$rdmux[0][6][0]$a$1594 [13] 2'00 $memory\cpu.imem.memory$rdmux[0][6][0]$a$1594 [15] 1'0 $memory\cpu.imem.memory$rdmux[0][6][0]$a$1594 [13] }, Y={ $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [19] $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [16:15] $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [13] $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [14] $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [4] $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [2] }
+      New ports: A={ 2'10 $memory\cpu.imem.memory$rdmux[0][6][0]$a$1594 [15] $memory\cpu.imem.memory$rdmux[0][6][0]$a$1594 [13] 2'01 }, B={ $memory\cpu.imem.memory$rdmux[0][6][0]$a$1594 [13] $memory\cpu.imem.memory$rdmux[0][6][0]$a$1594 [13] 2'00 $memory\cpu.imem.memory$rdmux[0][6][0]$a$1594 [15] 1'0 }, Y={ $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [19] $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [16:15] $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [13] $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [14] $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [4] }
+      New connections: $memory\cpu.imem.memory$rdmux[0][5][0]$a$1498 [2] = $memory\cpu.imem.memory$rdmux[0][6][0]$a$1594 [13]
+  Optimizing cells in module \cpu_top.
+Performed a total of 2 changes.
+
+43.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cpu_top'.
+Removed a total of 0 cells.
+
+43.14. Executing OPT_SHARE pass.
+
+43.15. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 3 on $auto$ff.cc:266:slice$1303 ($dffe) from module cpu_top.
+
+43.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+Removed 0 unused cells and 8 unused wires.
+<suppressed ~1 debug messages>
+
+43.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+<suppressed ~5 debug messages>
+
+43.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+43.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cpu_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~16 debug messages>
+
+43.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cpu_top.
+Performed a total of 0 changes.
+
+43.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cpu_top'.
+Removed a total of 0 cells.
+
+43.22. Executing OPT_SHARE pass.
+
+43.23. Executing OPT_DFF pass (perform DFF optimizations).
+Handling never-active EN on $auto$ff.cc:266:slice$1123 ($dffe) from module cpu_top (removing D path).
+
+43.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+Removed 131 unused cells and 146 unused wires.
+<suppressed ~165 debug messages>
+
+43.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+<suppressed ~34 debug messages>
+
+43.26. Rerunning OPT passes. (Maybe there is more to do..)
+
+43.27. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cpu_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+43.28. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cpu_top.
+Performed a total of 0 changes.
+
+43.29. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cpu_top'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+43.30. Executing OPT_SHARE pass.
+
+43.31. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 1-bit at position 0 on $$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdreg[0] ($dff) from module cpu_top.
+Setting constant 0-bit at position 1 on $$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdreg[0] ($dff) from module cpu_top.
+Setting constant 0-bit at position 2 on $$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdreg[0] ($dff) from module cpu_top.
+Setting constant 1-bit at position 3 on $$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdreg[0] ($dff) from module cpu_top.
+Setting constant 1-bit at position 4 on $$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdreg[0] ($dff) from module cpu_top.
+Setting constant 1-bit at position 5 on $$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdreg[0] ($dff) from module cpu_top.
+Setting constant 1-bit at position 6 on $$flatten\display.\dec1.$auto$proc_rom.cc:150:do_switch$114$rdreg[0] ($dff) from module cpu_top.
+
+43.32. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+Removed 0 unused cells and 18 unused wires.
+<suppressed ~1 debug messages>
+
+43.33. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+
+43.34. Rerunning OPT passes. (Maybe there is more to do..)
+
+43.35. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cpu_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+43.36. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cpu_top.
+Performed a total of 0 changes.
+
+43.37. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cpu_top'.
+Removed a total of 0 cells.
+
+43.38. Executing OPT_SHARE pass.
+
+43.39. Executing OPT_DFF pass (perform DFF optimizations).
+
+43.40. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+
+43.41. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+
+43.42. Finished OPT passes. (There is nothing left to do.)
+
+44. Executing TECHMAP pass (map to technology primitives).
+
+44.1. Executing Verilog-2005 frontend: /nix/store/sx2v0i73mn1ih2z1nk61pm9n5gjgpidy-yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nix/store/sx2v0i73mn1ih2z1nk61pm9n5gjgpidy-yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+44.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~73 debug messages>
+
+45. Executing OPT pass (performing simple optimizations).
+
+45.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+
+45.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cpu_top'.
+Removed a total of 0 cells.
+
+45.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+45.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+
+45.5. Finished fast OPT passes.
+
+46. Executing ABC pass (technology mapping using ABC).
+
+46.1. Extracting gate netlist of module `\cpu_top' to `<abc-temp-dir>/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+47. Executing OPT pass (performing simple optimizations).
+
+47.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+
+47.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cpu_top'.
+Removed a total of 0 cells.
+
+47.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+47.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+
+47.5. Finished fast OPT passes.
+
+48. Executing HIERARCHY pass (managing design hierarchy).
+
+48.1. Analyzing design hierarchy..
+Top module:  \cpu_top
+
+48.2. Analyzing design hierarchy..
+Top module:  \cpu_top
+Removed 0 unused modules.
+
+49. Printing statistics.
+
+=== cpu_top ===
+
+   Number of wires:                 37
+   Number of wire bits:            383
+   Number of public wires:          37
+   Number of public wire bits:     383
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  0
+
+50. Executing CHECK pass (checking for obvious problems).
+Checking module cpu_top...
+Found and reported 0 problems.
+
+51. Generating Graphviz representation of design.
+Writing dot description to `/openlane/designs/6th_project/runs/RUN_2025.06.16_13.48.20/tmp/synthesis/post_techmap.dot'.
+Dumping module cpu_top to page 1.
+
+52. Executing SHARE pass (SAT-based resource sharing).
+
+53. Executing OPT pass (performing simple optimizations).
+
+53.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+
+53.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cpu_top'.
+Removed a total of 0 cells.
+
+53.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \cpu_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+53.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \cpu_top.
+Performed a total of 0 changes.
+
+53.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\cpu_top'.
+Removed a total of 0 cells.
+
+53.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+53.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+
+53.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module cpu_top.
+
+53.9. Finished OPT passes. (There is nothing left to do.)
+
+54. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+Removed 0 unused cells and 32 unused wires.
+<suppressed ~32 debug messages>
+
+55. Printing statistics.
+
+=== cpu_top ===
+
+   Number of wires:                  5
+   Number of wire bits:             17
+   Number of public wires:           5
+   Number of public wire bits:      17
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  0
+
+mapping tbuf
+
+56. Executing TECHMAP pass (map to technology primitives).
+
+56.1. Executing Verilog-2005 frontend: /root/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v
+Parsing Verilog input from `/root/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+56.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+57. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+58. Executing TECHMAP pass (map to technology primitives).
+
+58.1. Executing Verilog-2005 frontend: /root/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v
+Parsing Verilog input from `/root/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+58.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+59. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+60. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_2 (noninv, pins=3, area=21.27) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__dfbbn_2 (noninv, pins=6, area=35.03) is a direct match for cell type $_DFFSR_NNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_2 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_2 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_2 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+60.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\cpu_top':
+
+61. Printing statistics.
+
+=== cpu_top ===
+
+   Number of wires:                  5
+   Number of wire bits:             17
+   Number of public wires:           5
+   Number of public wire bits:      17
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  0
+
+[INFO]: USING STRATEGY AREA 0
+
+62. Executing ABC pass (technology mapping using ABC).
+
+62.1. Extracting gate netlist of module `\cpu_top' to `/tmp/yosys-abc-uxZVYW/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+63. Executing SETUNDEF pass (replace undef values with defined constants).
+
+64. Executing HILOMAP pass (mapping to constant drivers).
+
+65. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+66. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \cpu_top..
+Removed 0 unused cells and 14 unused wires.
+<suppressed ~1 debug messages>
+
+67. Executing INSBUF pass (insert buffer cells for connected wires).
+
+68. Executing CHECK pass (checking for obvious problems).
+Checking module cpu_top...
+Found and reported 0 problems.
+
+69. Printing statistics.
+
+=== cpu_top ===
+
+   Number of wires:                  5
+   Number of wire bits:             17
+   Number of public wires:           5
+   Number of public wire bits:      17
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 14
+     sky130_fd_sc_hd__conb_1        14
+
+   Chip area for module '\cpu_top': 52.550400
+
+70. Executing Verilog backend.
+Dumping module `\cpu_top'.
+
+71. Executing JSON backend.
+
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: 67156d78b3, CPU: user 0.76s system 0.02s, MEM: 40.17 MB peak
+Yosys 0.38 (git sha1 543faed9c8c, clang++ 17.0.6 -fPIC -Os)
+Time spent: 17% 2x read_liberty (0 sec), 15% 24x opt_clean (0 sec), ...

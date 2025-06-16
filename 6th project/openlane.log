@@ -1,7 +1,0 @@
-[INFO] OpenLane v1.0.0 starting design lab6_openlane_complete
-[INFO] Verilog lint: no issues found
-[INFO] Yosys synthesis completed: 1500 gates mapped, 300 registers
-[INFO] Floorplan: core area set to 180µm x 180µm
-[INFO] Placement: cells placed, 97% routability
-[INFO] Routing: completed, congestion under 65%
-[INFO] Signoff: DRC clean, LVS match
