@@ -1,1 +1,0 @@
-Signoff report: all metrics within constraints.

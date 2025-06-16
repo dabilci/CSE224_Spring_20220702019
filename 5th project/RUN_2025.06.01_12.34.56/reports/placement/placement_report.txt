@@ -1,1 +1,0 @@
-Placement report: all metrics within constraints.

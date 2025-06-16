@@ -1,0 +1,34 @@
+%Warning-EOFNEWLINE: /openlane/designs/5th_project/src/implement.v:61:10: Missing newline at end of file (POSIX 3.206).
+                                                                        : ... Suggest add newline.
+   61 | endmodule
+      |          ^
+                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=5.018
+                     ... Use "/* verilator lint_off EOFNEWLINE */" and lint_on around source to disable this message.
+%Warning-EOFNEWLINE: /openlane/designs/5th_project/src/counter.v:16:10: Missing newline at end of file (POSIX 3.206).
+                                                                      : ... Suggest add newline.
+   16 | endmodule
+      |          ^
+%Warning-EOFNEWLINE: /openlane/designs/5th_project/src/register.v:29:10: Missing newline at end of file (POSIX 3.206).
+                                                                       : ... Suggest add newline.
+   29 | endmodule
+      |          ^
+%Warning-EOFNEWLINE: /openlane/designs/5th_project/src/decoder.v:66:10: Missing newline at end of file (POSIX 3.206).
+                                                                      : ... Suggest add newline.
+   66 | endmodule
+      |          ^
+%Warning-EOFNEWLINE: /openlane/designs/5th_project/src/memory.v:18:10: Missing newline at end of file (POSIX 3.206).
+                                                                     : ... Suggest add newline.
+   18 | endmodule
+      |          ^
+%Warning-EOFNEWLINE: /openlane/designs/5th_project/src/alu.v:21:10: Missing newline at end of file (POSIX 3.206).
+                                                                  : ... Suggest add newline.
+   21 | endmodule
+      |          ^
+%Warning-UNUSEDSIGNAL: /openlane/designs/5th_project/src/decoder.v:2:23: Bits of signal are not used: 'instruction'[14:12]
+                                                                       : ... note: In instance 'top_module.decoder_inst'
+    2 |     input wire [31:0] instruction,
+      |                       ^~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /openlane/designs/5th_project/src/memory.v:2:23: Bits of signal are not used: 'pc'[31:3]
+                                                                      : ... note: In instance 'top_module.imem_inst'
+    2 |     input wire [31:0] pc,
+      |                       ^~
